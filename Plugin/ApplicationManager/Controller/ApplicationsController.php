@@ -25,6 +25,7 @@ class ApplicationsController extends ApplicationManagerAppController {
 
     public function beforeFilter(){
         $this->Wizard->steps = array(
+            'index',
             'biodata',
             'address',
             'courses',
@@ -59,7 +60,9 @@ class ApplicationsController extends ApplicationManagerAppController {
 /**
  * [Wizard Process Callbacks]
  */
-
+    function _processIndex(){
+      return true;
+    }
     function _processBiodata(){
         $this->Person->set($this->data);
 

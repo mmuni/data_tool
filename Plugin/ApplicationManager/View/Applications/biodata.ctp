@@ -3,7 +3,7 @@
     'url' => $this->here,
     'formStyle' => 'horizontal',
 )); ?>
-	<h2>Step 1: Personal Biodata</h2>
+	<h2>Step 2: Personal Biodata</h2>
 	<?php
 		echo $this->Form->input('Person.surname');
 		echo $this->Form->input('Person.first_name');
@@ -69,4 +69,3 @@
 		<?php echo $this->Form->submit('Cancel', array('name' => 'Cancel', 'div' => false)); ?>
 	</div>
 <?php echo $this->Form->end(); ?>
-

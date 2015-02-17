@@ -2,7 +2,7 @@
     'id' => 'ApplicationForm',
     'url' => $this->here,
 )); ?>
-	<h2>Step 3: Courses</h2>
+	<h2>Step 4: Courses</h2>
 	<?php
 	?>
 	<div class="submit">
@@ -10,4 +10,3 @@
 		<?php echo $this->Form->submit('Cancel', array('name' => 'Cancel', 'div' => false)); ?>
 	</div>
 <?php echo $this->Form->end(); ?>
-

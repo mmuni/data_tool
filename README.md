@@ -6,7 +6,7 @@ Development Setup Instructions
 
 Grab the CakePHP 2.6.1 release
 
-        wget https://github.com/cakephp/cakephp/archive/2.6.1.zip
+        wget https://github.com/cakephp/cakephp/archive/2.6.1.zip -O 2.6.1.zip
 
 Unzip the downloaded zip file
 

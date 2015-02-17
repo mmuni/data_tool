@@ -31,3 +31,9 @@ Then start the builtin cakephp server like so:
 You can then hit the application with your web browser on this URL
 
         http://localhost:4000
+        
+Working with feature branches
+------------------------------
+
+        cd app
+        git checkout feature/<name_of_feature>

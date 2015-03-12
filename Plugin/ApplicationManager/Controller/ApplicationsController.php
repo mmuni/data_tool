@@ -22,6 +22,7 @@ class ApplicationsController extends ApplicationManagerAppController {
 		'AcademicHistory',
 		'Grade',
     );
+	
     public $components = array('Wizard.Wizard');
 
     public $layout = 'bootstrap3';
@@ -43,7 +44,7 @@ class ApplicationsController extends ApplicationManagerAppController {
             'feedback',
             'review'
         );
-
+		$this->Wizard->roaming =true;
         $this->set('countries', $this->Country->find('list'));
         $this->set('courses', $this->Course->find('list'));
         $this->set('course_programmes', $this->CourseProgramme->find('list'));
@@ -88,5 +89,11 @@ class ApplicationsController extends ApplicationManagerAppController {
     function _processUace(){
         return true;
     }
+	function _processReferee(){
+		pr($this->data);
+		exit;
+        return true;
+    }
+	
 
 }

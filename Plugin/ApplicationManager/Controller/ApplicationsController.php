@@ -20,8 +20,8 @@ class ApplicationsController extends ApplicationManagerAppController {
         'Person',
 		'Subject',
         'AcademicHistory',
-        'Grade'
-		'Referee',
+        'Grade',
+		'Referee'
     );
 	
     public $components = array('Wizard.Wizard');
@@ -36,7 +36,7 @@ class ApplicationsController extends ApplicationManagerAppController {
             'courses',
             'uace',
             'uce',
-            'academic_qualifications',
+            'academic_history',
             'employee_history',
             'career',
             'english_proficiency',
@@ -91,18 +91,15 @@ class ApplicationsController extends ApplicationManagerAppController {
     function _processUace(){
         return true;
     }
-
-	function _processReferee(){
-		pr($this->data);
-		exit;
-        return true;
-    }
-	
-
-
 	
  function _processUce(){
       return true;  
     }
 
+	function _processAcademicHistory(){
+		pr($this->data);
+		exit;
+        return true;
+    }
+	
 }

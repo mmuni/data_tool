@@ -21,9 +21,9 @@ class ApplicationsController extends ApplicationManagerAppController {
 		'Subject',
         'AcademicHistory',
         'Grade',
-		'Referee'
-		'AcademicHistory',
+		'Referee',
 		'Grade',
+		'Institution',
     );
 	
     public $components = array('Wizard.Wizard');
@@ -74,7 +74,7 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
     function _processBiodata(){
         $this->Person->set($this->data);
-
+		$this->Person->University->set(array('id'=>0));
         if ($this->Person->validates()) {
             return true;
         }
@@ -99,6 +99,18 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
 	function _processAcademicHistory(){
+		$this->Person->save();
+		
+		$person = $this->Person->read('id');
+		
+		$this->Institution->set($this->data);
+		$this->AcademicHistory->set('person_id', $person['Person']['id']);
+		$this->AcademicHistory->set($this->data);
+		
+		
+		$this->Institution->save($this->data);
+		$this->AcademicHistory->save($this->data);
+	
 		pr($this->data);
 		exit;
         return true;

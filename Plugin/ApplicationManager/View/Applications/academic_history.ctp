@@ -18,9 +18,9 @@
       for($i=0; $i<3; $i++)
       {
       echo "<tr><td>";
-      echo $this->form->input('academic_histories.institution'.$i, array('label'=>false))."</td><td>";
-      echo $this->form->input('AcademicHistory.qualification_name'.$i, array('label'=>Qualification))."</td><td>";
-      echo $this->form->input('AcademicHistory.date_obtained'.$i, array('label'=>Date Obtained))."</td><td>";
+      echo $this->form->input('Institution.institution'.$i, array('label'=>false))."</td><td>";
+      echo $this->form->input('AcademicHistory.qualification_name'.$i, array('label'=>false))."</td><td>";
+      echo $this->form->input('AcademicHistory.year_of_completion'.$i, array('label'=>false))."</td><td>";
       
       } 
 ?>

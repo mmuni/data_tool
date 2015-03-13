@@ -16,14 +16,14 @@
 
 </div>
 	<?php
-    echo $this->Form->input('Institution.name', array('label'=>"Examining Authority:"));
-	echo $this->Form->input('Institution.name', array('label'=>"Name of the School:"));
+    echo $this->Form->input('Institution.name1', array('label'=>"Examining Authority:"));
+	echo $this->Form->input('Institution.name2', array('label'=>"Name of the School:"));
 	echo $this->Form->input('ContactDetail.post_office_box', array('label'=>"Address of the School:"));
 	echo $this->Form->input('AcademicHistory.year_of_completion',             array(
                 'type' => 'date',
                 'empty' => false,
                 'inline' => false,
-                'maxYear' => date('Y') - 10,
+                'maxYear' => date('Y') - 2,
                 'minYear' => date('Y') - 90,
                 'dateFormat' => 'DMY',
                 'class' => '',
@@ -39,7 +39,7 @@
   <thead>
  <tr>
              <th>Subjects</th>
-             
+             <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</th>
              <th align="right">Grade</th>
          </tr>
  
@@ -51,7 +51,7 @@
       
       {
       
-      echo "<tr> <td>".$this->Form->input('', array('options' => $subjects,'default'=>null))."</td><td>";
+      echo "<tr> <td>".$this->Form->input('', array('options' => $subjects,'default'=>null))."</td><td>"."</td><td>";
       echo $this->Form->input('', array('options' => $Agrades,'default'=>null))."</td></tr>";
       
       }  

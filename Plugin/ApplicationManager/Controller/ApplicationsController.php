@@ -89,8 +89,13 @@ class ApplicationsController extends ApplicationManagerAppController {
     function _processUace(){
         return true;
     }
-	
+
  function _processUce(){
-      return true;  
+      return true;
+    }
+
+    protected function _afterComplete() {
+            $wizardData = $this->Wizard->read();
+            extract($wizardData);
     }
 }

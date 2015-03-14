@@ -19,8 +19,8 @@ class ApplicationsController extends ApplicationManagerAppController {
         'CourseProgramme',
         'Person',
 		'Subject',
-        'AcademicHistory',
-        'Grade',
+		'AcademicHistory',
+		'Grade',
     );
     public $components = array('Wizard.Wizard');
 
@@ -36,6 +36,7 @@ class ApplicationsController extends ApplicationManagerAppController {
             'uce',
             'academic_qualifications',
             'employee_history',
+            'career',
             'english_proficiency',
             'disabilities',
             'references',
@@ -47,8 +48,7 @@ class ApplicationsController extends ApplicationManagerAppController {
         $this->set('courses', $this->Course->find('list'));
         $this->set('course_programmes', $this->CourseProgramme->find('list'));
         $this->set('course_types', $this->CourseType->find('list'));
-        $this->set('subjects',$this->Subject->find('list'));
-		$this->set('Ogrades',$this->Grade->find('list', array('conditions' => array('Grade.level1' =>"O"))));
+
         $this->set('title_for_layout', 'Application Manager');
 		$this->set('subjects', $this->Subject->find('list'));
 		$this->set('Agrades', $this->Grade->find('list', array('conditions' => array('Grade.level2' => "A"))));
@@ -82,23 +82,12 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
     function _processCourses(){
-    return true;
-	}
-
-    function _processUace(){
-		pr($this->data);
-		exit;
         return true;
     }
-	
- function _processUce(){
-	 
-	  $this->AcademicHistory->set($this->data);
-      return true;  
+
+    function _processUace(){
+		$this->Person->set($this->data);
+        return true;
     }
-	 function _processEmployeeHistory(){
-	 
-	  $this->AcademicHistory->set($this->data);
-      return true;  
-    }
+
 }

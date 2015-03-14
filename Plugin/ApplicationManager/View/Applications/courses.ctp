@@ -4,22 +4,18 @@
 )); ?>
 	<h2>Step 4: Courses</h2>
 
-    <h3>Course 1</h3>
-	<?php
-        echo $this->Form->input('type1', array('options' => $course_types));
-        echo $this->Form->input('name1',array('options' => $courses));
-	?>
+	<?php for ($i=0; $i<4; $i++){
+      echo "<h3>Course " . ($i+1) . "</h3>";
+      echo $this->Form->input('course_type'. $i, array(
+        'options' => $course_types,
+        'label' => 'Course Type'
+      ));
 
-    <h3>Course 2</h3>
-	<?php
-        echo $this->Form->input('type2', array('options' => $course_types));
-        echo $this->Form->input('name2',array('options' => $courses));
-	?>
-
-    <h3>Course 3</h3>
-	<?php
-        echo $this->Form->input('type3', array('options' => $course_types));
-        echo $this->Form->input('name3',array('options' => $courses));
+      echo $this->Form->input('course_name'. $i, array(
+        'options' => $courses,
+        'label' => 'Course Name'
+      ));
+    }
 	?>
 
 	<div class="submit">

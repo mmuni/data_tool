@@ -2,7 +2,7 @@
     'id' => 'ApplicationForm',
     'url' => $this->here,
 )); ?>
-	<h2>Step 2: Address</h2>
+	<h2>Step 2: Address (GWE)</h2>
 	<?php
         echo $this->Form->input('Postal Address');
         echo $this->Form->input('Person.country', array(

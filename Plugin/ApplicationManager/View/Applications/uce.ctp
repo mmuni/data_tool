@@ -25,7 +25,8 @@ Please submit in your Uganda Certificate of Examination (UCE) OR Equivalent</h5>
 <?php
   echo $this->Form->create('AcademicHistory');			
   echo $this->Form->input('Examining Authority:',array('size' => 1));
-  echo $this->Form->input('Name and Address of the School:',array('maxlength'=>'50'));
+  echo $this->Form->input('Name of the School:',array('maxlength'=>'50'));
+  echo $this->Form->input('Address of the School:',array('maxlength'=>'50'));
   echo $this->Form->input('Year of Examination:',array('maxlength'=>'50'));
   echo $this->Form->input('Index No:',array('maxlength'=>'50'));
 

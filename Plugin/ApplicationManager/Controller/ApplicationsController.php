@@ -19,7 +19,8 @@ class ApplicationsController extends ApplicationManagerAppController {
         'CourseProgramme',
         'Person',
 		'Subject',
-		'Grade',
+        'AcademicHistory',
+        'Grade',
     );
     public $components = array('Wizard.Wizard');
 
@@ -50,6 +51,8 @@ class ApplicationsController extends ApplicationManagerAppController {
         $this->set('subjects',$this->Subject->find('list'));
 		$this->set('Ogrades',$this->Grade->find('list', array('conditions' => array('Grade.level1' =>"O"))));
         $this->set('title_for_layout', 'Application Manager');
+		$this->set('subjects', $this->Subject->find('list'));
+		$this->set('Agrades', $this->Grade->find('list', array('conditions' => array('Grade.level2' => "A"))));
     }
 
     public function index() {

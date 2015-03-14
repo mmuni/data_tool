@@ -21,6 +21,9 @@ class ApplicationsController extends ApplicationManagerAppController {
 		'Subject',
 		'AcademicHistory',
 		'Grade',
+		'ContactDetail',
+		'Institution',
+		'AcademicHistorySubject',
     );
     public $components = array('Wizard.Wizard');
 
@@ -86,7 +89,27 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
     function _processUace(){
-		$this->Person->set($this->data);
+		$this->AcademicHistory->set($this->data);
+		
+		$examing_authority = $this->data['Institution']['name1'];
+		
+		$i1 = $this->Institution->create();
+		$i1->name = $examing_authority;
+		$i1->save();
+		
+		$name_of_school = $this->data['Institution']['name2'];
+		
+		$i2 = $this->Institution->create();
+		$i2->name = $name_of_school;
+		$i2->save();
+		
+		$this->Institution->set($this->data);
+		
+		$this->ContactDetail->set($this->data);
+
+		$this->AcademicHistorySubject->set($this->data);
+		
+		
         return true;
     }
 

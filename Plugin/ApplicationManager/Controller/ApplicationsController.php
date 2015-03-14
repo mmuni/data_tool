@@ -36,7 +36,6 @@ class ApplicationsController extends ApplicationManagerAppController {
             'uce',
             'academic_qualifications',
             'employee_history',
-            'career',
             'english_proficiency',
             'disabilities',
             'references',
@@ -91,6 +90,13 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 	
  function _processUce(){
+	 
+	  $this->AcademicHistory->set($this->data);
+      return true;  
+    }
+	 function _processEmployeeHistory(){
+	 
+	  $this->AcademicHistory->set($this->data);
       return true;  
     }
 }

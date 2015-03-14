@@ -4,31 +4,22 @@
     'formStyle' => 'horizontal',
 )); ?>
 	<h2>Step 6: UCE</h2>
-	
-    
- 
- 
- <div id="welcome" class="col-md-8">
-    <div id="heading">
-        
+	 <div id="welcome" class="col-md-8">
+     <div id="heading">
        PREVIOUS EDUCATION
-  
     </div>
 <div>
-<?php echo $this->Form->create('uce'); ?>
 	<fieldset>
-
    <div class="alert alert-info">
-Secondary School Leaving Examination<br/>
-Please submit in your Uganda Certificate of Examination (UCE) OR Equivalent</h5>
+        Secondary School Leaving Examination<br/>
+        Please submit in your Uganda Certificate of Examination (UCE) OR Equivalent</h5>
  </div>
-<?php
-  echo $this->Form->create('AcademicHistory');			
-  echo $this->Form->input('Examining Authority:',array('size' => 1));
-  echo $this->Form->input('Name of the School:',array('maxlength'=>'50'));
-  echo $this->Form->input('Address of the School:',array('maxlength'=>'50'));
-  echo $this->Form->input('Year of Examination:',array('maxlength'=>'50'));
-  echo $this->Form->input('Index No:',array('maxlength'=>'50'));
+<?php		
+  echo $this->Form->input('Institution.name',array('label'=>'Examining Authority:'));
+  echo $this->Form->input('Institution.name',array('label'=>'Name of the School:'));
+  echo $this->Form->input('Institution.Address',array('label'=>'Address of the School:'));
+  echo $this->Form->date('AcademicHistory.year_of_completion',array('Date of Completion:'));
+  echo $this->Form->input('AcademicHistory.index_number',array('label'=>'Index No:'));
 
 ?>
 </fieldset>

@@ -4,51 +4,60 @@
 )); ?>
 	<h2>Step 4: Courses</h2>
 
-  <table class="table table-bordered">
+  <div id="c">
+  	<div id="coursesList">
+      <?php
+        echo "Course ";
 
-    <tr>
-      <th>Course</th>
-      <th>Type</th>
-      <th>Name</th>
-      <th>Programme</th>
-      <th>&nbsp;</th>
-    </tr>
+        echo $this->Form->input('Course.type', array(
+          'options' => $course_types,
+          'label' => false,
+        ));
 
-	<?php for ($i=0; $i<4; $i++) {
-      echo "<tr>";
+        echo $this->Form->input('Course.name', array(
+          'options' => $courses,
+          'label' => false
+        ));
 
-      echo "<td>Course " . ($i+1) . "</td>";
+        echo $this->Form->input('Course.programme', array(
+          'options' => $course_programmes,
+          'label' => false,
+        ));
 
-      echo "<td>";
-      echo $this->Form->input('Course.type'. $i, array(
-        'options' => $course_types,
-        'label' => false,
-      ));
-      echo "</td>";
-
-      echo "<td>";
-      echo $this->Form->input('Course.name'. $i, array(
-        'options' => $courses,
-        'label' => false
-      ));
-      echo "</td>";
-
-      echo "<td>";
-      echo $this->Form->input('Course.programme'. $i, array(
-        'options' => $course_programmes,
-        'label' => false,
-      ));
-      echo "</td>";
-
-      echo "<td><i class='glyphicon glyphicon-plus'></i></td>";
-
-      echo "</tr>";
-    }
-	?>
-  </table>
+        echo "<button type='btn btn-info' id='addCourseBtn'><i class='glyphicon glyphicon-plus'></i> Add Course</button>";
+      ?>
+  	</div>
+  </div>
 
 	<div class="submit">
 		<?php echo $this->Form->submit('Continue', array('div' => false)); ?>
 		<?php echo $this->Form->submit('Cancel', array('name' => 'Cancel', 'div' => false)); ?>
 	</div>
 <?php echo $this->Form->end(); ?>
+
+<script type='text/javascript'>
+	var lastRow=0;
+
+  function addPerson() {
+    lastRow++;
+    var c = $("#coursesList").clone(true)
+    c.attr('id','cousesList'+lastRow);
+
+    c.find('');
+    console.log(c);
+
+    $('#c').append(c);
+  }
+
+  function removePerson(x) {
+    $("#person"+x).remove();
+  }
+
+  $(document).ready(function(){
+    $('#addCourseBtn').click(function(e){
+      e.preventDefault();
+      addPerson();
+    });
+
+  });
+</script>

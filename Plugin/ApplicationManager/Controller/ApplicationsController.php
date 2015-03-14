@@ -34,7 +34,7 @@ class ApplicationsController extends ApplicationManagerAppController {
             'courses',
             'uace',
             'uce',
-            'academic_qualifications',
+            //'academic_qualifications',
             'employee_history',
             'english_proficiency',
             'disabilities',
@@ -95,8 +95,10 @@ class ApplicationsController extends ApplicationManagerAppController {
       return true;  
     }
 	 function _processEmployeeHistory(){
-	 
-	  $this->AcademicHistory->set($this->data);
+		 pr($this->data);
+		 exit;
+	 // $emp = $this->EmployeeHistory->find('all', ('conditions' => array('Employee.name' => $this->data['staff_number'])));
+	  $this->EmployeeHistory->set($this->data);
       return true;  
     }
 }

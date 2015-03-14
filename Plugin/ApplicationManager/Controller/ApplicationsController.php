@@ -80,6 +80,10 @@ class ApplicationsController extends ApplicationManagerAppController {
     return true;
 	}
 
+    function _processUace(){
+        return true;
+    }
+	
  function _processUce(){
       return true;  
     }

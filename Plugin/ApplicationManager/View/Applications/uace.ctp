@@ -2,10 +2,9 @@
     'id' => 'ApplicationForm',
     'url' => $this->here,
 )); ?>
-	<h2>Step 4: Courses (GWE)</h2>
+	<h2>Step 5: UACE (GWE)</h2>
 	<?php
-        echo $this->Form->input('Course Type', array('options' => $course_types));
-        echo $this->Form->input('Course Name',array('options' => $courses));
+    echo $this->Form->input('Examining Authority');
 	?>
 	<div class="submit">
 		<?php echo $this->Form->submit('Continue', array('div' => false)); ?>

@@ -2,10 +2,8 @@
     'id' => 'ApplicationForm',
     'url' => $this->here,
 )); ?>
-	<h2>Step 4: Courses (GWE)</h2>
+	<h2>Step 7: Other Academic Qualifications</h2>
 	<?php
-        echo $this->Form->input('Course Type', array('options' => $course_types));
-        echo $this->Form->input('Course Name',array('options' => $courses));
 	?>
 	<div class="submit">
 		<?php echo $this->Form->submit('Continue', array('div' => false)); ?>

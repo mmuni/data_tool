@@ -86,6 +86,8 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
     function _processUace(){
+		pr($this->data);
+		exit;
         return true;
     }
 

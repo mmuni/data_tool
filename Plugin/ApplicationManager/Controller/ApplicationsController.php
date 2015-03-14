@@ -77,6 +77,10 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
     function _processCourses(){
-    }
+    return true;
+	}
 
+ function _processUce(){
+      return true;  
+    }
 }

@@ -89,8 +89,7 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
     function _processUace(){
-		$this->AcademicHistory->set($this->data);
-		
+				
 		$examing_authority = $this->data['Institution']['name1'];
 		
 		$i1 = $this->Institution->create();
@@ -103,11 +102,15 @@ class ApplicationsController extends ApplicationManagerAppController {
 		$i2->name = $name_of_school;
 		$i2->save();
 		
-		$this->Institution->set($this->data);
-		
+		$this->AcademicHistory->set($this->data);		
+		$this->Institution->set($this->data);		
 		$this->ContactDetail->set($this->data);
-
 		$this->AcademicHistorySubject->set($this->data);
+		
+		$this->AcademicHistory->save($this->data);		
+		$this->Institution->save($this->data);		
+		$this->ContactDetail->save($this->data);
+		$this->AcademicHistorySubject->save($this->data);
 		
 		
         return true;

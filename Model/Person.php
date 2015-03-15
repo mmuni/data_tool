@@ -153,21 +153,6 @@ class Person extends AppModel {
 	);
 
 /**
- * belongsTo associations
- *
- * @var array
- */
-	public $belongsTo = array(
-		'University' => array(
-			'className' => 'University',
-			'foreignKey' => 'university_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
-
-/**
  * hasMany associations
  *
  * @var array

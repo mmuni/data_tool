@@ -14,7 +14,11 @@ class PeopleController extends AppController {
  * @var array
  */
 	public $components = array('Paginator');
-
+	
+	public function beforeFilter (){
+		parent::beforeFilter();
+		$this->Auth->allow('add');
+	}
 /**
  * index method
  *

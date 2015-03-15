@@ -8,7 +8,7 @@
 			<th><?php echo $this->Paginator->sort('address_json'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
-	<?php foreach ($applicationTemps as $applicationTemp): ?>
+	
 	<tr>
 		<td><?php echo h($applicationTemp['ApplicationTemp']['id']); ?>&nbsp;</td>
 		<td><?php echo h($applicationTemp['ApplicationTemp']['phone_number']); ?>&nbsp;</td>
@@ -20,7 +20,7 @@
 			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $applicationTemp['ApplicationTemp']['id']), array(), __('Are you sure you want to delete # %s?', $applicationTemp['ApplicationTemp']['id'])); ?>
 		</td>
 	</tr>
-<?php endforeach; ?>
+
 	</table>
 	<p>
 	<?php

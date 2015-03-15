@@ -35,6 +35,24 @@ class AppController extends Controller {
     public $helpers = array(
         'Form' => array(
             'className' => 'Bs3Helpers.Bs3Form'
-        )
+        ),
+		
     );
+	public $components = array(
+	    'Session',
+		'Auth'=> array(
+			'LoginRedirect' => array(),
+			'authenticate' => array(
+				'Form' => array(
+					'passwordHasher' => 'Blowfish'
+				)
+			)
+		)
+	);
+	
+	public function beforeFilter (){
+		parent::beforeFilter();
+		$this->Auth->allow('display','index', 'view','add');
+	}
 }
+?>

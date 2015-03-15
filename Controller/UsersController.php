@@ -19,8 +19,9 @@ class UsersController extends AppController {
 	}
 
 		public function add() {
-		
-			
+				   $this->loadModel('Person');
+				   $people = $this->people->find('all'); //we get the course_programmes from the database
+				   $this->set('people', $people);
 			}
 
 }

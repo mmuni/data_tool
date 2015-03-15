@@ -3,7 +3,11 @@
 	<fieldset>
 		<legend><?php echo __('Add User'); ?></legend>
 	<?php
-		echo $this->Form->inputs ( array('User.username','User.password','User.person_id','User.role_id'));
+		echo $this->Form->inputs ( array('User.username','User.password'));	   
+		echo $this->Form->input('User.person_id', array(
+            'options' => $people));
+		
+		//'User.person_id','User.role_id'));
 		//echo $this->Form->input('personal_json');
 		//echo $this->Form->input('address_json');
 	?>

@@ -37,7 +37,7 @@
                
 		$("#mytable tbody>tr:#person0").clone(true).attr('id','person'+lastRow).removeAttr('style').insertBefore("#mytable tbody>tr:#trAdd");
 		$("#person"+lastRow+" button").attr('onclick','removePerson('+lastRow+')');
-		$("#person"+lastRow+" input:first").attr('name','data[Career]['+lastRow+'][company_name]').attr('id','personcompany_name'+lastRow);
+		$("#person"+lastRow+" input:name").attr('name','data[Career]['+lastRow+'][company_name]').attr('id','personcompany_name'+lastRow);
 		$("#person"+lastRow+" select").attr('name','data[ContactDetail]['+lastRow+'][post_office_box]').attr('id','personpost_office_box'+lastRow);
 	$("#person"+lastRow+" select").attr('name','data[ContactDetail]['+lastRow+'][telephone]').attr('id','persontelephone'+lastRow);
 	$("#person"+lastRow+" input:eq(2)").attr('name','data[ContactDetail]['+lastRow+'][email]').attr('id','personEmail'+lastRow);

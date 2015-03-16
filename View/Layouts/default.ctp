@@ -29,37 +29,33 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<?php
 		echo $this->Html->meta('icon');
 		echo $this->Html->css('cake.generic');
-                echo $this->Html->css('bootstrap');
-                echo $this->Html->css('mmu');
+		echo $this->Html->css('bootstrap');
+		echo $this->Html->css('mmu');
+		echo $this->Html->script('jquery-1.11.0');
+		echo $this->Html->script('bootstrap');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
 </head>
 <body>
-<div id="container" > 
-<div id="header" class="row" >
-<h1>Mountains of the Moon University</h1>
-</div>
 
-<!--<div id="navigation" class="row"  >
-<div id="topnav" class="col-md-10">
+	<div id="container">
 
-</div>
-</div>-->
-<div id="page" class="row">
-<div id="content" class="col-md-12">
+		<div id="header" class="row" >
+			<h1>Mountains of the Moon University</h1>
+		</div>
 
- <?php echo $this->fetch('content');?>
-</div>
+		<div id="page" class="row">
+			<div id="content" class="col-md-12">
+				<?php echo $this->fetch('content');?>
+			</div>
+		</div>
 
-</div>
+		<div id="footer" class="row">
+		</div>
 
-</div>
+	</div>
 
-<div id="footer" class="row">
-
-</div>
-</div>
 </body>
 </html>

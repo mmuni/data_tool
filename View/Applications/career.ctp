@@ -20,18 +20,18 @@
 </div>
 <div id="welcome" class="col-md-8">
     <div id="heading">
-      Employee History  
+      Employee History
     </div>
 <div >
 <?php echo $this->Form ->create('Career');?>
 <fieldset>
-	
+
          <div class="alert alert-info">
        Employee History
  </div>
 	<table id="mytable">
 	<tr><th>Employer Name</th><th>Address</th><th>Phone No</th><th>Email</th><th>Position</th><th>Start Date</th><th>End date</th></tr>
-	<tr id="person0" style="display:none;">  
+	<tr id="person0" style="display:none;">
             <td><?php echo $this->Form->button('&nbsp;-&nbsp;',array('type'=>'button','title'=>'Click Here to remove this person')); ?></td>
             <td><?php echo $this->Form->input('unused.uid',array('label'=>'','type'=>'text'));?></td>
             <td><?php echo $this->Form->input('unused.phone_number',array('label'=>'','type'=>'text'));?></td>
@@ -50,23 +50,23 @@
 <?php
 //    echo $this->Form->submit('back',array("name"=> "back"));
 //    echo $this->Form->submit('next',array("name"=> "next"));
-//    echo $this->Form->end();  
+//    echo $this->Form->end();
  ?>
 
-<?php echo $this->Html->script(array('jquery-1.6.4.min'));?>
+
 <script type='text/javascript'>
 	var lastRow=0;
-	
+
 	function addPerson() {
                     lastRow++;
-               
+
 		$("#mytable tbody>tr:#person0").clone(true).attr('id','person'+lastRow).removeAttr('style').insertBefore("#mytable tbody>tr:#trAdd");
 		$("#person"+lastRow+" button").attr('onclick','removePerson('+lastRow+')');
 		$("#person"+lastRow+" input:first").attr('name','data[Person]['+lastRow+'][lastName]').attr('id','personLastName'+lastRow);
 		$("#person"+lastRow+" input:eq(1)").attr('name','data[Person]['+lastRow+'][firstName]').attr('id','personFirstName'+lastRow);
 		$("#person"+lastRow+" input:eq(2)").attr('name','data[Person]['+lastRow+'][email]').attr('id','personEmail'+lastRow);
 		$("#person"+lastRow+" select").attr('name','data[Person]['+lastRow+'][gender]').attr('id','personGender'+lastRow);
-                
+
             }
 	function removePerson(x) {
 		$("#person"+x).remove();

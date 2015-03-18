@@ -7,7 +7,7 @@ class UsersController extends AppController {
 
 
 
-	var $uses = array('User','Person','Role');
+	
     public $components = array('Paginator');
 
 
@@ -36,7 +36,7 @@ class UsersController extends AppController {
 
 		}
 
-	}
+	
 	
 	
 

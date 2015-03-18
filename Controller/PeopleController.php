@@ -7,6 +7,7 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  */
 class PeopleController extends AppController {
+    var $uses = array('University');
 
 /**
  * Components
@@ -14,7 +15,7 @@ class PeopleController extends AppController {
  * @var array
  */
 	public $components = array('Paginator');
-	
+
 	public function beforeFilter (){
 		parent::beforeFilter();
 		$this->Auth->allow('add');
@@ -59,7 +60,11 @@ class PeopleController extends AppController {
 				$this->Session->setFlash(__('The person could not be saved. Please, try again.'));
 			}
 		}
+
 		
+
+		$universities = $this->University->find('list');
+
 		$this->set(compact('universities'));
 	}
 

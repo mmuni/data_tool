@@ -1,16 +1,15 @@
 <?php
 class UsersController extends AppController {
 
-<<<<<<< HEAD
+
 	var $uses = array('Person','User');
 
 
 
 
-=======
 	var $uses = array('User','Person','Role');
     public $components = array('Paginator');
->>>>>>> origin/master
+
 
 	public function beforeFilter() {
 	parent::beforeFilter();

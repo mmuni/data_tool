@@ -179,7 +179,8 @@ class ApplicationsController extends ApplicationManagerAppController {
 
 
 }
-?>
+
 
 	 }
-	 }
+	 
+?>

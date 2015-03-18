@@ -1,17 +1,12 @@
 <?php
 class UsersController extends AppController {
-<<<<<<< HEAD
+
 	var $uses = array('Person','User');
 
 
 
 
-public function login() {
 
-=======
-	
-	var $uses = array('User','Person','Role');
-	
 	public function beforeFilter() {
 	parent::beforeFilter();
           // Allow users to register and logout.
@@ -33,18 +28,12 @@ public function login() {
 				$this->Session->setFlash(__('Invalid username or password'));
 			}
 		} 
->>>>>>> origin/master
-	}
-	public function add() {
-	
-	$this->set('people', $this->Person->find('list'));
-	$this->set('user', $this->User->find('list'));
 
-<<<<<<< HEAD
 	}
 	
-}
-=======
+	
+
+
  public function add() {
 	 $this->set('people', $this->Person->find('list'));
         if ($this->request->is('post')) {
@@ -59,4 +48,4 @@ public function login() {
         }
     }
 	}
->>>>>>> origin/master
+

@@ -23,7 +23,7 @@ class Person extends AppModel {
 
 	public $displayField = 'surname';
 
-	public $displayField = 'othername';
+	
 
 
 /**

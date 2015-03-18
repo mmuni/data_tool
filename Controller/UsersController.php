@@ -1,6 +1,8 @@
 <?php
 class UsersController extends AppController {
 	
+	var $uses = array('Person','Role');
+	
 	public function beforeFilter() {
 	parent::beforeFilter();
           // Allow users to register and logout.
@@ -19,9 +21,12 @@ class UsersController extends AppController {
 	}
 
 		public function add() {
-				   $this->loadModel('Person');
+			
+			$this->set('people', $this->Person->find('list'));
+			$this->set('role', $this->Role->find('list'));
+				  /* $this->loadModel('Person');
 				   $people = $this->people->find('all'); //we get the course_programmes from the database
-				   $this->set('people', $people);
+				   $this->set('people', $people);*/
 			}
 
 }

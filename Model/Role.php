@@ -14,6 +14,8 @@ App::uses('AppModel', 'Model');
  * @property EnglishProficiency $EnglishProficiency
  */
 class Role extends AppModel {
+	
+	public $displayField = 'name';
 
 }
 ?>

@@ -28,7 +28,7 @@ class ApplicationsController extends ApplicationManagerAppController {
 		'Institution',
 		'AcademicHistorySubject',
     );
-	
+
     public $components = array('Wizard.Wizard');
 
     public $layout = 'bootstrap3';
@@ -94,32 +94,53 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
     function _processUace(){
+
+				
+
 		$this->AcademicHistory->set($this->data);
-		
+
+
 		$examing_authority = $this->data['Institution']['name1'];
-		
+
 		$i1 = $this->Institution->create();
 		$i1->name = $examing_authority;
 		$i1->save();
-		
+
 		$name_of_school = $this->data['Institution']['name2'];
-		
+
 		$i2 = $this->Institution->create();
 		$i2->name = $name_of_school;
 		$i2->save();
-		
-		$this->Institution->set($this->data);
-		
-		$this->ContactDetail->set($this->data);
 
+		
+		$this->AcademicHistory->set($this->data);		
+		$this->Institution->set($this->data);		
+
+
+		$this->Institution->set($this->data);
+
+
+		$this->ContactDetail->set($this->data);
 		$this->AcademicHistorySubject->set($this->data);
+
+		
+		$this->AcademicHistory->save($this->data);		
+		$this->Institution->save($this->data);		
+		$this->ContactDetail->save($this->data);
+		$this->AcademicHistorySubject->save($this->data);
 		
 		
+
         return true;
     }
-	
+
  function _processUce(){
-      return true;  
+      return true;
+    }
+
+    protected function _afterComplete() {
+            $wizardData = $this->Wizard->read();
+            extract($wizardData);
     }
 	 function _processEmployeeHistory(){
 		// pr($this->data);
@@ -127,21 +148,26 @@ class ApplicationsController extends ApplicationManagerAppController {
 	 // $emp = $this->EmployeeHistory->find('all', ('conditions' => array('Employee.name' => $this->data['staff_number'])));
 	 
 	  $this->EmployeeHistory->set($this->data);
-	   $this->EmployeeHistory->save($this->data);
+      $this->EmployeeHistory->save($this->data);
       return true; 
 
 	function _processAcademicHistory(){
 		$this->Person->save();
+      return true;
+     }
+
+	function _processAcademicHistory(){
+		$this->Person->save();
 		$person = $this->Person->read('id');
-		
+
 		$this->Institution->set($this->data);
 		$this->AcademicHistory->set('person_id', $person['Person']['id']);
 		$this->AcademicHistory->set($this->data);
-		
-		
+
+
 		$this->Institution->save($this->data);
 		$this->AcademicHistory->save($this->data);
-	
+
 		pr($this->data);
 		exit;
         return true;

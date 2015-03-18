@@ -12,14 +12,9 @@
 		?>
 
 
-	<?php
-		echo $this->Form->input('username');
-		echo $this->Form->input('password');
-		echo $this->Form->input('deleted');
-	?>
-
+	
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

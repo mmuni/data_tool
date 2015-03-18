@@ -5,7 +5,6 @@ App::uses('AppModel', 'Model');
  *
  * @property Application $Application
  * @property StaffDetail $StaffDetail
- * @property University $University
  * @property AcademicHistory $AcademicHistory
  * @property AddressPerson $AddressPerson
  * @property Career $Career

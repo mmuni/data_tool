@@ -1,3 +1,4 @@
+
 <div class="applicationTemps index">
 	<h2><?php echo __('Application Temps'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
@@ -42,3 +43,10 @@
 		<li><?php echo $this->Html->link(__('New Application Temp'), array('action' => 'add')); ?></li>
 	</ul>
 </div>
+
+<?php
+
+pr($people);
+
+?>
+

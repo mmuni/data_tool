@@ -8,7 +8,7 @@
             'options' => array( 'admin' => 'Admin', 'dean' => 'Dean', 'clerk' => 'Clerk','manager'=>'Manager','registrar'=>'Registrar','staff'=>'Staff')));
 			echo $this->Form->submit('Create');
 		?>
-    
+
 	</fieldset>
 
 </div>

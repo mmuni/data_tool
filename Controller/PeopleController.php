@@ -61,11 +61,18 @@ class PeopleController extends AppController {
 			}
 		}
 
+
 		
 
 		$universities = $this->University->find('list');
 
 		$this->set(compact('universities'));
+
+		//$universities = $this->Person->University->find('list');
+		//$this->set(compact('universities'));
+		//$universities = $this->University->find('list');
+		//$this->set(compact('universities'));
+
 	}
 
 /**

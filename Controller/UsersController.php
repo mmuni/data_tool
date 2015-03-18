@@ -1,11 +1,16 @@
 <?php
 class UsersController extends AppController {
 
+<<<<<<< HEAD
 	var $uses = array('Person','User');
 
 
 
 
+=======
+	var $uses = array('User','Person','Role');
+    public $components = array('Paginator');
+>>>>>>> origin/master
 
 	public function beforeFilter() {
 	parent::beforeFilter();
@@ -13,12 +18,12 @@ class UsersController extends AppController {
                $this->Auth->allow('add', 'logout');
               }
 	public function login() {
-		
+
 		//if already logged-in, redirect
 		if($this->Session->check('Auth.User')){
-			$this->redirect(array('action' => 'dashboard'));		
+			$this->redirect(array('action' => 'dashboard'));
 		}
-		
+
 		// if we get the post information, try to authenticate
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
@@ -27,7 +32,10 @@ class UsersController extends AppController {
 			} else {
 				$this->Session->setFlash(__('Invalid username or password'));
 			}
+
 		} 
+
+		}
 
 	}
 	
@@ -37,15 +45,20 @@ class UsersController extends AppController {
  public function add() {
 	 $this->set('people', $this->Person->find('list'));
         if ($this->request->is('post')) {
-				
+
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been created'));
 				$this->redirect(array('action' => 'login'));
 			} else {
 				$this->Session->setFlash(__('The user could not be created. Please, try again.'));
-			}	
+			}
         }
     }
+
+    public function index() {
+        $this->set('users', $this->Paginator->paginate());
+    }
+
 	}
 

@@ -1,5 +1,5 @@
 <?php
-class course_types extends AppModel {
+class CourseType extends AppModel {
     public $hasMany = array(
         'course'=> array(
             'className'=>'Course',

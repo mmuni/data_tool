@@ -15,10 +15,10 @@
         Please submit in your Uganda Certificate of Examination (UCE) OR Equivalent</h5>
  </div>
 <?php		
-  echo $this->Form->input('Institution.name',array('label'=>'Examining Authority:'));
-  echo $this->Form->input('Institution.name',array('label'=>'Name of the School:'));
-  echo $this->Form->input('Institution.Address',array('label'=>'Address of the School:'));
-  echo $this->Form->date('AcademicHistory.year_of_completion',array('label'=>'Date of Completion:'));
+  echo $this->Form->input('Institution.name1',array('label'=>'Examining Authority:'));
+  echo $this->Form->input('Institution.name2',array('label'=>'Name of the School:'));
+  echo $this->Form->input('ContactDetail.post_office_box',array('label'=>'Address of the School:'));
+  echo $this->Form->input('AcademicHistory.year_of_completion',array('label'=>'Date of Completion:'));
   echo $this->Form->input('AcademicHistory.index_number',array('label'=>'Index No:'));
 
 ?>

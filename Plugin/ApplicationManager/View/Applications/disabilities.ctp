@@ -11,7 +11,8 @@
        Please indicate all the disabilities/Medical issues you could be having
  </div>
         <legend><?php echo __(''); ?></legend>
-        <?php
+        
+		<?php
 		echo $this->Form->input('', array('type' => 'select','multiple' => 'checkbox','options' => $disabilities));
 		echo $this->form->input('Other');
 		?>

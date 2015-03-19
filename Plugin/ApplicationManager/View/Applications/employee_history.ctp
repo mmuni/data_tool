@@ -34,7 +34,6 @@
 
 	function addPerson() {
                     lastRow++;
-
 		$("#mytable tbody>tr:#person0").clone(true).attr('id','person'+lastRow).removeAttr('style').insertBefore("#mytable tbody>tr:#trAdd");
 		$("#person"+lastRow+" button").attr('onclick','removePerson('+lastRow+')');
 		$("#person"+lastRow+" input:name").attr('name','data[Career]['+lastRow+'][company_name]').attr('id','personcompany_name'+lastRow);

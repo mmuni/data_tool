@@ -1,5 +1,5 @@
 <?php
-class courses extends AppModel {
+class Course extends AppModel {
 	public $belongsTo = array(
         'course_types'=>array(
             'className'=>'course_types',

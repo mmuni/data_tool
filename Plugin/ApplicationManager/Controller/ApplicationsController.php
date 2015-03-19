@@ -33,6 +33,8 @@ class ApplicationsController extends ApplicationManagerAppController {
 		'Disability',
 		'Feedback',
 		'Address',
+		'ApplicationCourse',
+		'EnglishProficiency',
 		
     );
 
@@ -104,8 +106,9 @@ class ApplicationsController extends ApplicationManagerAppController {
 
     function _processUace(){
 
-				
-
+			
+		$this->Institution->set($this->data);
+		$this->ContactDetail->set($this->data);
 		$this->AcademicHistory->set($this->data);
 
 
@@ -144,7 +147,9 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
  function _processUce(){  
-	//$this->Uce->set($this->data);
+	$this->Institution->set($this->data);
+	$this->ContactDetail->set($this->data);
+	$this->AcademicHistory->set($this->data);
 	 return true;
 	 
     }
@@ -191,17 +196,17 @@ class ApplicationsController extends ApplicationManagerAppController {
 	  
 	  function _processEnglishProficiency(){
 		
-	
+	$this->EnglishProficiency->set($this->data);
       return true; 
 	  }
 	  function _processDisabilities(){
 		
-	
+	$this->Disabilities->set($this->data);
       return true; 
 	  }
 	  function _processReferee(){
 		
-	
+	$this->Referee->set($this->data);
       return true; 
 	  }
 	  function _processFeedback(){

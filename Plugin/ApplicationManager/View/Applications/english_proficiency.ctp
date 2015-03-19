@@ -12,12 +12,13 @@
 		
 	<?php
 
-        $options = array(' Fluent',' Adequate', '  Basic');
-        $option = array('yes','no');
-        $attributes = array('legend' => false);
-        echo $this->Form->radio('speaking_level', $options);
-        echo $this->Form->radio('reading_level', $options);
-        echo $this->Form->radio('writing_level', $options);
+        $options = array('F'=>'Fluent','A'=>' Adequate', 'B'=>'Basic');
+        $option = array('Y'=>'yes','N'=>'no');
+        
+        echo $this->Form->radio('EnglishProficiency.reading_level', $options);
+        echo $this->Form->radio('EnglishProficiency.speaking_level', $options);
+        echo $this->Form->radio('EnglishProficiency.writing_level', $options);
+		$attributes = array('legend' => false);
         echo 'Do you have any english qualification ? '.$this->Form->radio('certification', $option, $attributes);
 	
         ?>

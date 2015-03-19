@@ -1,5 +1,9 @@
 <?php
-class ApplicationTemp extends AppModel {
 
+class ApplicationCourse extends AppModel{
 
 }
+
+
+?>
+

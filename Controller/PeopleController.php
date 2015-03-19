@@ -69,9 +69,15 @@ class PeopleController extends AppController {
 
 		//$universities = $this->Person->University->find('list');
 		//$this->set(compact('universities'));
+<<<<<<< HEAD
+=======
 		//$universities = $this->University->find('list');
 		//$this->set(compact('universities'));
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 
+>>>>>>> origin/master
 	}
 
 /**

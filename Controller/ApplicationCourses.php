@@ -1,5 +1,5 @@
 <?php
-class StaffDetailsController extends AppController {
+class ApplicationCoursesController extends AppController {
 
 
 	public function add() {

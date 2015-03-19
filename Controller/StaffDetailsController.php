@@ -1,5 +1,5 @@
 <?php
-class StaffDetailsController extends AppController {
+class StaffController extends AppController {
 
 
 	public function add() {
@@ -9,6 +9,10 @@ class StaffDetailsController extends AppController {
     public function beforeFilter(){
         parent::beforeFilter();
         $this->Auth->allow('add');
+    }
+
+    public function add(){
+
     }
 
 

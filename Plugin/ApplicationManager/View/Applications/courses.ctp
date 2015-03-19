@@ -3,7 +3,7 @@
     'url' => $this->here,
 )); ?>
 	<h2>Step 4: Courses</h2>
-
+echo $this->form->input('ApplicationCourse.type'.$i, array('label'=>false)
   <div id="c">
   	<div id="coursesList">
       <?php

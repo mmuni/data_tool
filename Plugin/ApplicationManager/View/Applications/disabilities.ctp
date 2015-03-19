@@ -13,7 +13,17 @@
         <legend><?php echo __(''); ?></legend>
         
 		<?php
-		echo $this->Form->input('', array('type' => 'select','multiple' => 'checkbox','options' => $disabilities));
+		
+		echo $this->Form->input(
+			'Disability.name',
+			array(
+				'type' => 'select',
+				'multiple' => 'checkbox',
+				'label' => 'Type of disability',
+				'options' => $disabilities
+			)
+		);
+		
 		echo $this->form->input('Other');
 		?>
 <table>

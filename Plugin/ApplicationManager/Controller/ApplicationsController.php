@@ -201,9 +201,11 @@ class ApplicationsController extends ApplicationManagerAppController {
 	  }
 	  function _processDisabilities(){
 		
-	$this->Disabilities->set($this->data);
-      return true; 
+		$this->Disability->set($this->data);
+		
+		return false; 
 	  }
+	  
 	  function _processReferee(){
 		
 	$this->Referee->set($this->data);

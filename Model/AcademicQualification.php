@@ -5,7 +5,7 @@ App::uses('AppModel', 'Model');
  * Career Model
  *
  */
-class Academic_qualification extends AppModel {
+class AcademicQualification extends AppModel {
 
 
 

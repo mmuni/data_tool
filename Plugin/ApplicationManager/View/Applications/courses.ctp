@@ -9,22 +9,23 @@
       <?php
         echo "Course ";
 
-        echo $this->Form->input('Course.type', array(
+        echo $this->Form->input('ApplicationCourse.type', array(
           'options' => $course_types,
           'label' => false,
         ));
 
-        echo $this->Form->input('Course.name', array(
+        echo $this->Form->input('ApplicationCourse.name', array(
           'options' => $courses,
           'label' => false
         ));
 
-        echo $this->Form->input('Course.programme', array(
+        echo $this->Form->input('ApplicationCourse.programme', array(
           'options' => $course_programmes,
           'label' => false,
         ));
-
+		
         echo "<button type='btn btn-info' id='addCourseBtn'><i class='glyphicon glyphicon-plus'></i> Add Course</button>";
+		echo "<button type='btn btn-info' id='addCourseBtn'><i class='glyphicon glyphicon-minus'></i> Remove Course</button>";
       ?>
   	</div>
   </div>

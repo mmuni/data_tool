@@ -37,10 +37,11 @@
  </thead>
  
  <?php 
+	sort($subjects);
       for($i=1; $i<=10; $i++)
       
       {
-		 sort($subjects); 
+		  
 		  
 		 // echo $this->Form->input('Course Type', array('options' => $course_types));
       echo "<tr> <td>".$this->Form->input('', array('options' => $subjects,'default'=> null)).   "</td><td>";

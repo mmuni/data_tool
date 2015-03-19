@@ -1,5 +1,5 @@
 <?php echo $this->Form->create('Application', array('id' => 'ApplicationForm', 'url' => $this->here)); ?>
-	<h2>Step 1: Login (GWE)</h2>
+	<h2>Step 1: Login </h2>
 	<?php
 		echo $this->Form->input('Person.phone_number');
 		echo $this->Form->input('Application.code');

@@ -26,9 +26,14 @@ class ApplicationsController extends ApplicationManagerAppController {
 		'Institution',
 		'ContactDetail',
 		'Institution',
-		'AcademicHistorySubject',
+		'AcademicHistoriesSubject',
 		'User',
 		'Role',
+		'Employee_history',
+		'Disability',
+		'Feedback',
+		'Address',
+		
     );
 
     public $components = array('Wizard.Wizard');
@@ -43,13 +48,11 @@ class ApplicationsController extends ApplicationManagerAppController {
             'courses',
             'uace',
             'uce',
-            //'academic_qualifications',
             'academic_history',
             'employee_history',
-            'career',
             'english_proficiency',
             'disabilities',
-            'references',
+            'referee',
             'feedback',
             'review'
         );
@@ -61,7 +64,9 @@ class ApplicationsController extends ApplicationManagerAppController {
 
         $this->set('title_for_layout', 'Application Manager');
 		$this->set('subjects', $this->Subject->find('list'));
+		$this->set('disabilities', $this->Disability->find('list'));
 		$this->set('Agrades', $this->Grade->find('list', array('conditions' => array('Grade.level2' => "A"))));
+		$this->set('Ogrades', $this->Grade->find('list', array('conditions' => array('Grade.level1' => "O"))));
     }
 
     public function index() {
@@ -80,7 +85,7 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
     function _processBiodata(){
         $this->Person->set($this->data);
-		$this->Person->University->set(array('id'=>0));
+		
         if ($this->Person->validates()) {
             return true;
         }
@@ -88,10 +93,12 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
     function _processAddress(){
+	 $this->Address->set($this->data);
         return true;
     }
 
     function _processCourses(){
+	$this->ApplicationCourse->set($this->data);
         return true;
     }
 
@@ -102,17 +109,17 @@ class ApplicationsController extends ApplicationManagerAppController {
 		$this->AcademicHistory->set($this->data);
 
 
-		$examing_authority = $this->data['Institution']['name1'];
+		//$examing_authority = $this->data['Institution']['name1'];
 
-		$i1 = $this->Institution->create();
-		$i1->name = $examing_authority;
-		$i1->save();
+		//$i1 = $this->Institution->create();
+		//$i1->name = $examing_authority;
+		
 
-		$name_of_school = $this->data['Institution']['name2'];
+		//$name_of_school = $this->data['Institution']['name2'];
 
-		$i2 = $this->Institution->create();
-		$i2->name = $name_of_school;
-		$i2->save();
+		//$i2 = $this->Institution->create();
+		//$i2->name = $name_of_school;
+		//$i2->save();
 
 		
 		$this->AcademicHistory->set($this->data);		
@@ -123,63 +130,95 @@ class ApplicationsController extends ApplicationManagerAppController {
 
 
 		$this->ContactDetail->set($this->data);
-		$this->AcademicHistorySubject->set($this->data);
+		//$this->AcademicHistorySubject->set($this->data);
 
 		
-		$this->AcademicHistory->save($this->data);		
-		$this->Institution->save($this->data);		
-		$this->ContactDetail->save($this->data);
-		$this->AcademicHistorySubject->save($this->data);
+			
+		//$this->Institution->save($this->data);		
+		//$this->ContactDetail->save($this->data);
+		//$this->AcademicHistoriesSubject->save($this->data);
 		
 		
 
         return true;
     }
 
- function _processUce(){
-      return true;
-    }
-
-    protected function _afterComplete() {
-            $wizardData = $this->Wizard->read();
-            extract($wizardData);
-    }
-	 function _processEmployeeHistory(){
-		// pr($this->data);
-		// exit;
-	 // $emp = $this->EmployeeHistory->find('all', ('conditions' => array('Employee.name' => $this->data['staff_number'])));
+ function _processUce(){  
+	//$this->Uce->set($this->data);
+	 return true;
 	 
-	  $this->EmployeeHistory->set($this->data);
-      $this->EmployeeHistory->save($this->data);
-      return true; 
+    }
+
+   
+	 
+
+	//function _processAcademicHistory(){
+		//$this->Person->save();
+      //return true;
+     //}
 
 	function _processAcademicHistory(){
-		$this->Person->save();
-      return true;
-     }
+		//$this->Person->save();
+		//$person = $this->Person->read('id');
 
-	function _processAcademicHistory(){
-		$this->Person->save();
-		$person = $this->Person->read('id');
-
-		$this->Institution->set($this->data);
+		//$this->Institution->set($this->data);
 		$this->AcademicHistory->set('person_id', $person['Person']['id']);
 		$this->AcademicHistory->set($this->data);
 
 
-		$this->Institution->save($this->data);
-		$this->AcademicHistory->save($this->data);
+		//$this->Institution->save($this->data);
+		
 
-		pr($this->data);
-		exit;
+		
         return true;
     }
-
-
-
-
-}
-
+	
+	function _processEmployeeHistory(){
+		
+	  
+	  
+      return true; 
+	  }
+	  
+	  
+	  function _processCareer(){
+		
+	  
+	  $this->Career->set($this->data);
+      return true; 
+	  }
+	  
+	  
+	  function _processEnglishProficiency(){
+		
+	
+      return true; 
+	  }
+	  function _processDisabilities(){
+		
+	
+      return true; 
+	  }
+	  function _processReferee(){
+		
+	
+      return true; 
+	  }
+	  function _processFeedback(){
+		
+	
+      return true; 
+	  }
+	
+	protected function _afterComplete() {
+            $wizardData = $this->Wizard->read();
+            extract($wizardData);
+			
+	$this->AcademicHistory->save($this->data);		
+    }
+	
+	
+	
 
 	 }
 	 

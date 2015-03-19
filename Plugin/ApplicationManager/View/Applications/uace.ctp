@@ -3,10 +3,7 @@
     'url' => $this->here,
 )); ?>
 
-	<h2>Step 5: UACE (GWE)</h2>
-	<?php
-    echo $this->Form->input('Examining Authority');
-	?>
+	
 
 	<h2>Step 5: UACE</h2>
 	   <div class="alert alert-info">

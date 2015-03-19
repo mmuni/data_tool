@@ -3,7 +3,7 @@
     'url' => $this->here,
     'formStyle' => 'horizontal',
 )); ?>
-	<h2>Step 2: Personal Biodata (GWE)</h2>
+	<h2>Step 2: Personal Biodata</h2>
 	<?php
 		echo $this->Form->input('Person.surname');
 		echo $this->Form->input('Person.first_name');

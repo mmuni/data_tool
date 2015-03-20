@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-<div class="people form">
-
-<?php
-echo $this->Form->create('User');
-echo $this->Form->inputs(array('username', 'password'));
-echo $this->Form->input('role', array('options'=> array( 'admin'=>'Admin','dean'=>'Dean','clerk'=>'Clerk','manager'=>'Manager','staff'=>'Staff','reg'=>'Registrar')));
-echo $this->Form->submit('Create');
-?>‏
-
-	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
 
 <div class="users form">

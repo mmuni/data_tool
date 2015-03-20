@@ -41,6 +41,7 @@ class ApplicationsController extends ApplicationManagerAppController {
             'courses',
             'uace',
             'uce',
+            //'academic_qualifications',
             'academic_history',
             'employee_history',
             'career',
@@ -50,7 +51,7 @@ class ApplicationsController extends ApplicationManagerAppController {
             'feedback',
             'review'
         );
-		$this->Wizard->roaming =true;
+		//$this->Wizard->roaming =true;
         $this->set('countries', $this->Country->find('list'));
         $this->set('courses', $this->Course->find('list'));
         $this->set('course_programmes', $this->CourseProgramme->find('list'));
@@ -141,18 +142,22 @@ class ApplicationsController extends ApplicationManagerAppController {
             $wizardData = $this->Wizard->read();
             extract($wizardData);
     }
-
 	 function _processEmployeeHistory(){
-		 pr($this->data);
-		 exit;
+		// pr($this->data);
+		// exit;
 	 // $emp = $this->EmployeeHistory->find('all', ('conditions' => array('Employee.name' => $this->data['staff_number'])));
+	 
 	  $this->EmployeeHistory->set($this->data);
+      $this->EmployeeHistory->save($this->data);
+      return true; 
+
+	function _processAcademicHistory(){
+		$this->Person->save();
       return true;
      }
 
 	function _processAcademicHistory(){
 		$this->Person->save();
-
 		$person = $this->Person->read('id');
 
 		$this->Institution->set($this->data);
@@ -167,8 +172,5 @@ class ApplicationsController extends ApplicationManagerAppController {
 		exit;
         return true;
     }
-
-
-
-
-}
+	 }
+	 }

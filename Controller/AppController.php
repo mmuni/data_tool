@@ -41,7 +41,14 @@ class AppController extends Controller {
 	public $components = array(
 	    'Session',
 		'Auth'=> array(
-			'LoginRedirect' => array(),
+			'LoginRedirect' => array(
+					'controller' => 'user',
+					'action' => 'index'
+					),
+			'logoutRedirect' => array(
+					'controller' => 'pages',
+					'action' => 'display','home'
+					),
 			'authenticate' => array(
 				'Form' => array(
 					'passwordHasher' => 'Blowfish'
@@ -52,8 +59,13 @@ class AppController extends Controller {
 	
 	public function beforeFilter (){
 		parent::beforeFilter();
+
 		//$this->Auth->allow('*');		
 		$this->Auth->allow('display','index', 'view','add');
+
+		$this->Auth->allow('*');
+		//$this->Auth->allow('display','index', 'view','add');
+
 	}
 }
 ?>

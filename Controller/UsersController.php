@@ -5,9 +5,6 @@ class UsersController extends AppController {
 
 var $uses = array('Person','User');
 
-
-    var $uses = array('User','Person','Role');
-
     public $components = array('Paginator');
 
     public function beforeFilter() {
@@ -20,7 +17,6 @@ var $uses = array('Person','User');
         $this->set('users', $this->Paginator->paginate());
     }
 
-	}
 
     public function dashboard(){
     }

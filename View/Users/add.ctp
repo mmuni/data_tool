@@ -3,12 +3,12 @@
 		<legend><?php echo __('Add User'); ?></legend>
 	     <?php
 			echo $this->Form->create('User');
-			echo $this->Form->inputs(array('username', 'password','person_id'));
+			echo $this->Form->inputs(array('username', 'password'));
 			echo $this->Form->input('role', array(
             'options' => array( 'admin' => 'Admin', 'dean' => 'Dean', 'clerk' => 'Clerk')));
 			echo $this->Form->submit('Create');
 		?>
-    
+
 	</fieldset>
 
 </div>

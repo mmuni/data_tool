@@ -7,8 +7,6 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  */
 class PeopleController extends AppController {
-    var $uses = array('University');
-
 /**
  * Components
  *

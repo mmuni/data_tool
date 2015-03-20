@@ -27,6 +27,8 @@ class ApplicationsController extends ApplicationManagerAppController {
 		'ContactDetail',
 		'Institution',
 		'AcademicHistorySubject',
+		'User',
+		'Role',
     );
 
     public $components = array('Wizard.Wizard');
@@ -172,5 +174,13 @@ class ApplicationsController extends ApplicationManagerAppController {
 		exit;
         return true;
     }
+
+
+
+
+}
+
+
 	 }
-	 }
+	 
+?>

@@ -12,4 +12,7 @@ App::uses('BlowfishPasswordHasher','Controller/Component/Auth');
 	return true;
 	}
 
+public $displayField = 'role_id';
+
+
 }

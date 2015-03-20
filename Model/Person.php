@@ -19,7 +19,11 @@ class Person extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'othername';
+
+	public $displayField = 'surname';
+
+	
+
 
 /**
  * Validation rules

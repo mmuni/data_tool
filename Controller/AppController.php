@@ -60,8 +60,13 @@ class AppController extends Controller {
 	public function beforeFilter (){
 		parent::beforeFilter();
 
+<<<<<<< HEAD
 		//$this->Auth->allow('*');		
 		$this->Auth->allow('display','index', 'view','add');
+=======
+		$this->Auth->allow('display','index', 'view','add');
+		$this->Auth->allow('*');
+>>>>>>> origin/master
 
 		$this->Auth->allow('*');
 		//$this->Auth->allow('display','index', 'view','add');

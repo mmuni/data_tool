@@ -7,6 +7,7 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  */
 class PeopleController extends AppController {
+    var $uses = array('University');
 
 /**
  * Components
@@ -14,7 +15,7 @@ class PeopleController extends AppController {
  * @var array
  */
 	public $components = array('Paginator');
-	
+
 	public function beforeFilter (){
 		parent::beforeFilter();
 		$this->Auth->allow('add');
@@ -60,6 +61,8 @@ class PeopleController extends AppController {
 			}
 		}
 		//$universities = $this->Person->University->find('list');
+		//$this->set(compact('universities'));
+		//$universities = $this->University->find('list');
 		//$this->set(compact('universities'));
 	}
 

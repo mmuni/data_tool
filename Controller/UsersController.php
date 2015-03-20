@@ -1,6 +1,6 @@
 <?php
 class UsersController extends AppController {
-<<<<<<< HEAD
+
 var $uses = array('Person');
 
 public function add() {

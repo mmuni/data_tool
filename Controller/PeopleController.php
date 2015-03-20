@@ -58,8 +58,10 @@ class PeopleController extends AppController {
 				$this->Session->setFlash(__('The person could not be saved. Please, try again.'));
 			}
 		}
-		$universities = $this->University->find('list');
-		$this->set(compact('universities'));
+		//$universities = $this->Person->University->find('list');
+		//$this->set(compact('universities'));
+		//$universities = $this->University->find('list');
+		//$this->set(compact('universities'));
 	}
 
 /**

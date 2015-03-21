@@ -1,3 +1,4 @@
+
 <div class="users form">
 		<?php echo $this->Session->flash('auth'); ?>
         <?php echo $this->Form->create('User'); ?>
@@ -16,3 +17,6 @@
 <?php
  echo $this->Html->link( "Add A New User",   array('action'=>'add') ); 
 ?>
+
+<?php echo __('User has been Created Successfully'); ?>
+

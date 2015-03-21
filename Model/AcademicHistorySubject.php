@@ -1,5 +1,5 @@
 <?php
-class AcademicHistory extends AppModel{
+class AcademicHistorySub extends AppModel{
     
 
 }

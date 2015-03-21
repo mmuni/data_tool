@@ -6,7 +6,7 @@ App::uses('AppController', 'Controller');
  * @property Reference $Reference
  * @property PaginatorComponent $Paginator
  */
-class ReferenceController extends AppController {
+class RefereesController extends AppController {
 
 /**
  * Components

@@ -1,41 +1,67 @@
+<h2>English Proficiency</h2>
+<?php
+	echo $this->Form->create('Application',
+		array(
+			'id' => 'ApplicationForm',
+			'url' => $this->here,
+			'formStyle' => 'horizontal'
+		)
+	);
 
-<div id="welcome" class="col-md-8">
-    <div id="heading">
-        English Proficiency
-    </div>
-    
-    
-<div id="content1">
-<div class="radio">
-<?php echo $this->Form->create(''); ?>
-	<fieldset>
-		
-	<?php
+	echo $this->Form->input('EnglishProficiency.reading_level',
+		array(
+			'type' => 'radio',
+			'label' => 'Reading Level',
+			'inline' => true,
+			'options' => array(
+				1 => 'Fluent',
+				2 => 'Adequate',
+				3 => 'Basic',
+			)
+		)
+	);
 
-        $options = array('F'=>'Fluent','A'=>' Adequate', 'B'=>'Basic');
-        $option = array('Y'=>'yes','N'=>'no');
-        
-        echo $this->Form->radio('EnglishProficiency.reading_level', $options);
-        echo $this->Form->radio('EnglishProficiency.speaking_level', $options);
-        echo $this->Form->radio('EnglishProficiency.writing_level', $options);
-		$attributes = array('legend' => false);
-        echo 'Do you have any english qualification ? '.$this->Form->radio('certification', $option, $attributes);
-	
-        ?>
-                
-	</fieldset>
-<table>
- <tr>
- <td> 
-   <div class="submit">
-		<?php echo $this->Form->submit('Continue', array('div' => false)); ?>
-		<?php echo $this->Form->submit('Cancel', array('name' => 'Cancel', 'div' => false)); ?>
-	</div>
-  </td>
-  <td></td>
-  
-  </td>
- </tr>
- </table>
+	echo $this->Form->input('EnglishProficiency.speaking_level',
+		array(
+			'type' => 'radio',
+			'label' => 'Speaking Level',
+			'inline' => true,
+			'options' => array(
+				1 => 'Fluent',
+				2 => 'Adequate',
+				3 => 'Basic',
+			)
+		)
+	);
+	    
+	echo $this->Form->input('EnglishProficiency.writing_level',
+		array(
+			'type' => 'radio',
+			'label' => 'Writing Level',
+			'inline' => true,
+			'options' => array(
+				1 => 'Fluent',
+				2 => 'Adequate',
+				3 => 'Basic',
+			)
+		)
+	);
 
-</div></div>
+	echo $this->Form->input('EnglishProficiency.certification',
+		array(
+			'type' => 'select',
+			'label' => 'Do you have any english qualification?',
+			'options' => array(
+				'Y' => 'Yes',
+				'N' => 'No'
+			)
+		)
+	);
+?>
+
+<div class="submit">
+	<?php echo $this->Form->submit('Continue', array('div' => false)); ?>
+	<?php echo $this->Form->submit('Cancel', array('name' => 'Cancel', 'div' => false)); ?>
+</div>
+
+<?php echo $this->Form->end(); ?>

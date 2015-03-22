@@ -28,11 +28,8 @@ $cakeDescription = __d('cake_dev', 'MMU .::. ');
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-		$this->Html->css('cake.generic');
-		echo $this->Html->css('bootstrap');
-		echo $this->Html->css('mmu');
-		echo $this->Html->script('jquery-1.11.0');
-		echo $this->Html->script('bootstrap');
+		echo $this->Html->css(array('bootstrap.min', 'bootstrap-theme.min', 'mmu'));
+		echo $this->Html->script(array('jquery-1.11.0', 'bootstrap.min'));
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');

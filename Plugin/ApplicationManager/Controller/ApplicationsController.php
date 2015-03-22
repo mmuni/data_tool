@@ -35,6 +35,8 @@ class ApplicationsController extends ApplicationManagerAppController {
 		'Address',
 		'ApplicationCourse',
 		'EnglishProficiency',
+		'Career',
+		'PeopleDisability',
 
     );
 
@@ -179,20 +181,13 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
 	function _processEmployeeHistory(){
-
-
+		
+		$this->Career->set($this->data);
+		$this->ContactDetail->set($this->data);
+		
 
       return true;
 	  }
-
-
-	  function _processCareer(){
-
-
-	  $this->Career->set($this->data);
-      return true;
-	  }
-
 
 	  function _processEnglishProficiency(){
 
@@ -201,14 +196,14 @@ class ApplicationsController extends ApplicationManagerAppController {
 	  }
 	  function _processDisabilities(){
 
-		$this->Disability->set($this->data);
+		$this->PeopleDisability->set($this->data);
 
-		return false;
+		return true;
 	  }
 
 	  function _processReferee(){
 
-	$this->Referee->set($this->data);
+		$this->Referee->set($this->data);
       return true;
 	  }
 	  function _processFeedback(){

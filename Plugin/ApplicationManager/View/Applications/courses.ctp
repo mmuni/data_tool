@@ -10,17 +10,17 @@
 	  <fieldset>
 		<legend>Choice: <?= ($i+1) ?></legend>
 	  <?php
-        echo $this->Form->input('ApplicationCourse.'.$i.'type', array(
+        echo $this->Form->input('ApplicationCourse.'.$i.'.type', array(
           'options' => $course_types,
           'label' => false,
         ));
 
-        echo $this->Form->input('ApplicationCourse.'.$i.'name', array(
+        echo $this->Form->input('ApplicationCourse.'.$i.'.name', array(
           'options' => $courses,
           'label' => false
         ));
 
-        echo $this->Form->input('ApplicationCourse.'.$i.'programme', array(
+        echo $this->Form->input('ApplicationCourse.'.$i.'.programme', array(
           'options' => $course_programmes,
           'label' => false,
         ));

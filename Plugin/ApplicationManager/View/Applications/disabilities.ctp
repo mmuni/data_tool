@@ -15,7 +15,7 @@
 		<?php
 		
 		echo $this->Form->input(
-			'Disability.name',
+			'PeopleDisability.disability_id',
 			array(
 				'type' => 'select',
 				'multiple' => 'checkbox',

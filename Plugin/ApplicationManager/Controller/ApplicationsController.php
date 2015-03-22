@@ -43,6 +43,7 @@ class ApplicationsController extends ApplicationManagerAppController {
     // public $layout = 'bootstrap3';
 
     public function beforeFilter(){
+	    $this->Auth->allow('wizard');
         $this->Wizard->steps = array(
             'index',
             'biodata',

@@ -1,3 +1,5 @@
+<?php $this->assign('title', 'Login'); ?>
+
 <div class="users form">
 		<?php echo $this->Session->flash('auth'); ?>
         <?php echo $this->Form->create('User'); ?>

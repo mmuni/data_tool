@@ -108,7 +108,10 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
     function _processUace(){
-
+			$wizardData = $this->Wizard->read();
+			extract($wizardData);
+			pr($wizardData);
+		exit;
 
 		$this->Institution->set($this->data);
 		$this->ContactDetail->set($this->data);
@@ -205,21 +208,49 @@ class ApplicationsController extends ApplicationManagerAppController {
 	  function _processReferee(){
 
 		$this->Referee->set($this->data);
-		pr($this->data);
+		
       return true;
 	  }
 	  function _processFeedback(){
 
-
+	
+		$this->Feedback->set($this->data);
+		
       return true;
 	  }
-
+	  
+		function _processReview(){
+			$wizardData = $this->Wizard->read();
+			extract($wizardData);
+			pr($wizardData);
+		exit;
+      //return true;
+	  }
 	protected function _afterComplete() {
             $wizardData = $this->Wizard->read();
             extract($wizardData);
 
+	$this->Person->save($this->data);
+	$this->Address->save($this->data);
+	$this->ApplicationCourse->save($this->data);
+	$this->Institution->save($this->data);
+	$this->ContactDetail->save($this->data);
 	$this->AcademicHistory->save($this->data);
-    }
+	$this->Career->save($this->data);
+	$this->EnglishProficiency->save($this->data);
+	$this->Referee->save($this->data);
+	$this->Feedback->save($this->data);
+	
+	
+	
+	
+	
+	
+	$this->AcademicHistory->save($this->data);
+    
+	
+	
+	}
 
 
 

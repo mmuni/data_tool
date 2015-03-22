@@ -1,4 +1,10 @@
-<?php echo $this->Form->create('Application', array('id' => 'ApplicationForm', 'url' => $this->here)); ?>
+<?php 
+echo $this->
+Form->create('Application', 
+array('id' => 'ApplicationForm', 
+'url' => $this->here)); 
+?>
+
 	<h2>Step 1: Login </h2>
 	<?php
 		echo $this->Form->input('Person.phone_number');

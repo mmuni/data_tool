@@ -24,7 +24,7 @@
 			)
 		);
 		
-		echo $this->form->input('Other');
+		echo $this->form->input('PeopleDisability.Other');
 		?>
 <table>
  <tr>

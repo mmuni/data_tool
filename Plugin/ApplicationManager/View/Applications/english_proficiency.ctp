@@ -19,7 +19,7 @@
         echo $this->Form->radio('EnglishProficiency.speaking_level', $options);
         echo $this->Form->radio('EnglishProficiency.writing_level', $options);
 		$attributes = array('legend' => false);
-        echo 'Do you have any english qualification ? '.$this->Form->radio('certification', $option, $attributes);
+        echo 'Do you have any english qualification ? '.$this->Form->radio('EnglishProficiency.certification', $option, $attributes);
 	
         ?>
                 

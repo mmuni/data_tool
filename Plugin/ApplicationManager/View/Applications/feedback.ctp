@@ -1,3 +1,9 @@
+<?php echo $this->Form->create('Application', array(
+    'id' => 'ApplicationForm',
+    'url' => $this->here,
+    'formStyle' => 'horizontal',
+)); ?>
+
 <div id="sidenav" class="col-md-2">
     <div id="sidemenu" ><h2>Menu</h2></div>
 
@@ -18,7 +24,7 @@ Select what applies
 
 
 <?php
-    echo $this->Form->input('feedback', array(
+    echo $this->Form->input('Feedback.name', array(
     'type' => 'select',
     'multiple' => 'checkbox',
     'options' => array(
@@ -34,16 +40,6 @@ Select what applies
     )
     ) );
 echo $this->form->input('Other');
-
-
-    echo $this->Form->input('', array(
-    'type' => 'select',
-    'multiple' => 'checkbox',
-    'options' => array(
-    'i'=>'I declare that the information given above is correct',
-	)
-	) );
-	
 	?>
     <table>
  <tr>
@@ -61,3 +57,5 @@ echo $this->form->input('Other');
  </table>
 </fieldset>
     </div>
+	
+	<?php echo $this->Form->end(); ?>

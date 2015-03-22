@@ -16,7 +16,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('cake_dev', 'MMU .::. ');
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,15 +40,27 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 </head>
 <body>
 
-	<div id="container" class="container">
-
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">
-                    <img src="/img/mmuLogo.png">
+                    <img alt="Mountains of the Moon University Logo" src="/img/mmuLogo.png">
+		    Mountains of the Moon University
                 </a>
-            </div>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	        <ul class="nav navbar-nav navbar-right">
+		    <li><a href="/applications">Applications</a></li>
+<?php if ($this->Session->read('Auth.User')): ?>
+		    <li><a href="/users/logout">Logout</a></li>
+<?php else: ?>
+		    <li><a href="/users/login">Login</a></li>
+<?php endif ?>
+		</ul>
+	    </div>
         </nav>
+
+	<div id="container" class="container">
+
 
     <?php
     if ($this->Session->read('Auth.User')){

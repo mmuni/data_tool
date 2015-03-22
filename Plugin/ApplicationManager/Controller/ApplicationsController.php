@@ -205,6 +205,7 @@ class ApplicationsController extends ApplicationManagerAppController {
 	  function _processReferee(){
 
 		$this->Referee->set($this->data);
+		pr($this->data);
       return true;
 	  }
 	  function _processFeedback(){

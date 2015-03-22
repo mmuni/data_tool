@@ -20,15 +20,11 @@ class UsersController extends AppController {
 
     public function login() {
 
-        //if already logged-in, redirect
-        if($this->Session->check('Auth.User')){
-            $this->redirect(array('action' => 'dashboard'));
-        }
-
         // if we get the post information, try to authenticate
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
                 $this->Session->setFlash(__('Welcome, '. $this->Auth->user('username')));
+		// Redirect to wherever the user was going before being forced to login
                 $this->redirect($this->Auth->redirectUrl());
             } else {
                 $this->Session->setFlash(__('Invalid username or password'));

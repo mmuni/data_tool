@@ -68,4 +68,5 @@
 		 </td>
  
  </tr>
+</table>
 <?php echo $this->Form->end(); ?>

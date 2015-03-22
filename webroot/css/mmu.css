@@ -1,3 +1,7 @@
+.navbar-brand {
+    height: 90px;
+}
+
 #headertext{
 	margin:-20px 10px;
 	font-family:Georgia, "Times New Roman", Times, serif;

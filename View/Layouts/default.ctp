@@ -28,9 +28,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->css('cake.generic');
+		$this->Html->css('cake.generic');
 		echo $this->Html->css('bootstrap');
-		$this->Html->css('mmu');
+		echo $this->Html->css('mmu');
 		echo $this->Html->script('jquery-1.11.0');
 		echo $this->Html->script('bootstrap');
 		echo $this->fetch('meta');
@@ -40,11 +40,15 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 </head>
 <body>
 
-	<div id="container">
+	<div id="container" class="container">
 
-		<div id="header" class="row" >
-			<h1>Mountains of the Moon University</h1>
-		</div>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <img src="/img/mmuLogo.png">
+                </a>
+            </div>
+        </nav>
 
     <?php
     if ($this->Session->read('Auth.User')){

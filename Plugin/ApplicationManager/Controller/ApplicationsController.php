@@ -35,12 +35,12 @@ class ApplicationsController extends ApplicationManagerAppController {
 		'Address',
 		'ApplicationCourse',
 		'EnglishProficiency',
-		
+
     );
 
     public $components = array('Wizard.Wizard');
 
-    public $layout = 'bootstrap3';
+    // public $layout = 'bootstrap3';
 
     public function beforeFilter(){
         $this->Wizard->steps = array(
@@ -87,7 +87,7 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
     function _processBiodata(){
         $this->Person->set($this->data);
-		
+
         if ($this->Person->validates()) {
             return true;
         }
@@ -106,7 +106,7 @@ class ApplicationsController extends ApplicationManagerAppController {
 
     function _processUace(){
 
-			
+
 		$this->Institution->set($this->data);
 		$this->ContactDetail->set($this->data);
 		$this->AcademicHistory->set($this->data);
@@ -116,7 +116,7 @@ class ApplicationsController extends ApplicationManagerAppController {
 
 		//$i1 = $this->Institution->create();
 		//$i1->name = $examing_authority;
-		
+
 
 		//$name_of_school = $this->data['Institution']['name2'];
 
@@ -124,9 +124,9 @@ class ApplicationsController extends ApplicationManagerAppController {
 		//$i2->name = $name_of_school;
 		//$i2->save();
 
-		
-		$this->AcademicHistory->set($this->data);		
-		$this->Institution->set($this->data);		
+
+		$this->AcademicHistory->set($this->data);
+		$this->Institution->set($this->data);
 
 
 		$this->Institution->set($this->data);
@@ -135,27 +135,27 @@ class ApplicationsController extends ApplicationManagerAppController {
 		$this->ContactDetail->set($this->data);
 		//$this->AcademicHistorySubject->set($this->data);
 
-		
-			
-		//$this->Institution->save($this->data);		
+
+
+		//$this->Institution->save($this->data);
 		//$this->ContactDetail->save($this->data);
 		//$this->AcademicHistoriesSubject->save($this->data);
-		
-		
+
+
 
         return true;
     }
 
- function _processUce(){  
+ function _processUce(){
 	$this->Institution->set($this->data);
 	$this->ContactDetail->set($this->data);
 	$this->AcademicHistory->set($this->data);
 	 return true;
-	 
+
     }
 
-   
-	 
+
+
 
 	//function _processAcademicHistory(){
 		//$this->Person->save();
@@ -172,61 +172,61 @@ class ApplicationsController extends ApplicationManagerAppController {
 
 
 		//$this->Institution->save($this->data);
-		
 
-		
+
+
         return true;
     }
-	
+
 	function _processEmployeeHistory(){
-		
-	  
-	  
-      return true; 
+
+
+
+      return true;
 	  }
-	  
-	  
+
+
 	  function _processCareer(){
-		
-	  
+
+
 	  $this->Career->set($this->data);
-      return true; 
+      return true;
 	  }
-	  
-	  
+
+
 	  function _processEnglishProficiency(){
-		
+
 	$this->EnglishProficiency->set($this->data);
-      return true; 
+      return true;
 	  }
 	  function _processDisabilities(){
-		
+
 		$this->Disability->set($this->data);
-		
-		return false; 
+
+		return false;
 	  }
-	  
+
 	  function _processReferee(){
-		
+
 	$this->Referee->set($this->data);
-      return true; 
+      return true;
 	  }
 	  function _processFeedback(){
-		
-	
-      return true; 
+
+
+      return true;
 	  }
-	
+
 	protected function _afterComplete() {
             $wizardData = $this->Wizard->read();
             extract($wizardData);
-			
-	$this->AcademicHistory->save($this->data);		
+
+	$this->AcademicHistory->save($this->data);
     }
-	
-	
-	
+
+
+
 
 	 }
-	 
+
 ?>

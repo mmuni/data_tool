@@ -28,7 +28,7 @@
 		echo $this->Html->meta('icon');
 
         echo $this->Html->css('bootstrap');
-        echo $this->Html->script('ApplicationManager.jquery-1.11.0');
+        echo $this->Html->script('jquery-1.11.0');
         echo $this->Html->script('bootstrap');
 
 		echo $this->fetch('meta');
@@ -41,7 +41,9 @@
     <div id="container" class="container">
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/"><img src="/img/mmuLogo.png" height="35"> MMU</a>
+                <a class="navbar-brand" href="/">
+                    <img src="/img/mmuLogo.png">
+                </a>
             </div>
         </nav>
 

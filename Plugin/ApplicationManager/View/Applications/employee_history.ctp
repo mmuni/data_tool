@@ -21,9 +21,11 @@
 		<th>Start Date</th>
 		<th>End date</th>
 	</tr>
+	
+	<?php for ($i = 0; $i < 3; $i = $i+1): ?>
      <?php 
 	 echo $this->Form ->create('EmployeeHistory');
-      for($i=0; $i<3; $i++)
+     
       {
       echo "<tr><td>";
 			echo $this->Form->input('Career.company_name'.$i, array('label'=>false))."</td><td>";
@@ -35,7 +37,7 @@
 			echo $this->Form->input('Career.date_ended'.$i, array('label'=>false))."</td><td>";
 			}
 	?>
-     
+     <?php endfor ?>
 	</table>
 
 

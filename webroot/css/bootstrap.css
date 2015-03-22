@@ -3779,9 +3779,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .navbar-header {
+	background-color:skyblue;
     float: left;
   }
 }
+
+  .navbar-header1 {
+	background-color:skyblue;
+      }
 .navbar-collapse {
   padding-right: 15px;
   padding-left: 15px;

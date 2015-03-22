@@ -47,7 +47,7 @@ $cakeDescription = __d('cake_dev', 'MMU .::. ');
 		    Mountains of the Moon University
                 </a>
 	    </div>
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <div class="collapse navbar-collapse navbar-header1" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav navbar-right">
 		    <li><a href="/applications">Applications</a></li>
 <?php if ($this->Session->read('Auth.User')): ?>
@@ -69,7 +69,12 @@ $cakeDescription = __d('cake_dev', 'MMU .::. ');
     ?>
 
 		<div id="page" class="row">
-			<div id="content" class="col-md-12">
+		
+			<div id="navigation" class="col-md-1 navbar-header1">
+
+			</div>
+		
+			<div id="content" class="col-md-11">
 				<?php echo $this->fetch('content');?>
 			</div>
 		</div>

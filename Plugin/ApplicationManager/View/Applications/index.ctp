@@ -1,11 +1,11 @@
-<?php 
-echo $this->
-Form->create('Application', 
-array('id' => 'ApplicationForm', 
-'url' => $this->here)); 
+<?php echo $this-> Form->create('Application', array(
+    'id' => 'ApplicationForm',
+    'url' => $this->here,
+    'formStyle' => 'horizontal',
+));
 ?>
 
-	<h2>Step 1: Login </h2>
+	<h2>Step 1: Sign in</h2>
 	<?php
 		echo $this->Form->input('Person.phone_number');
 		echo $this->Form->input('Application.code');

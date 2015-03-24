@@ -72,38 +72,6 @@
   }
 }
 
-
-#sidebar{
-	height:470px;
-	border-style:groove;
-	border-width:1px;
-	border-radius:10px;
-	background-color:#FFF;
-        
-	}
-#wrapper{
-	background-color:#eee;
-}
-#content{
-	border-style:groove;
-	border-width:1px;
-	border-color:#999;
-	background-color:#eee;
-}
-#content1{
-    margin: 10px;
-    padding: 25px;
-}
-#footer{
-	height:40px;
-	background-color:skyblue;
-	border:groove;
-	border-color:#000;
-	border-width:1px;
-
 .navbar-brand {
     height: 90px;
-
 }
-
-				                      

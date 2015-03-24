@@ -37,25 +37,27 @@ $cakeDescription = __d('cake_dev', 'MMU .::. ');
 </head>
 <body>
 
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">
+					<img alt="Mountains of the Moon University Logo" src="/img/mmulogo.png">
+					Mountains of the Moon University
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/applications">Applications</a></li>
 
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">
-                    <img alt="Mountains of the Moon University Logo" src="/img/mmuLogo.png">
-		    Mountains of the Moon University
-                </a>
-	    </div>
-	    <div class="collapse navbar-collapse navbar-header1" id="bs-example-navbar-collapse-1">
-	        <ul class="nav navbar-nav navbar-right">
-		    <li><a href="/applications">Applications</a></li>
-<?php if ($this->Session->read('Auth.User')): ?>
-		    <li><a href="/users/logout">Logout</a></li>
-<?php else: ?>
-		    <li><a href="/users/login">Login</a></li>
-<?php endif ?>
-		</ul>
-	    </div>
-        </nav>
+					<?php if ($this->Session->read('Auth.User')): ?>
+						<li><a href="/users/logout">Logout</a></li>
+					<?php else: ?>
+						<li><a href="/users/login">Login</a></li>
+					<?php endif ?>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
 	<div id="container" class="container">
 
@@ -67,12 +69,7 @@ $cakeDescription = __d('cake_dev', 'MMU .::. ');
     ?>
 
 		<div id="page" class="row">
-		
-			<div id="navigation" class="col-md-1 navbar-header1">
-
-			</div>
-		
-			<div id="content" class="col-md-11">
+			<div id="content" class="col-md-12">
 				<?php echo $this->fetch('content');?>
 			</div>
 		</div>

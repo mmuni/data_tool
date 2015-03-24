@@ -31,30 +31,42 @@
 	
 	<div style="color:green;font-weight:bold;font-size:12pt">Subject Results (Provide Grade such as A,B ,C) </div>
 	
-	<table border="0">
+	<table class='table'>
  
   <thead>
  <tr>
              <th>Subjects</th>
-             <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</th>
+             
              <th align="right">Grade</th>
          </tr>
  
  </thead>
+
+	<?php for ($i = 0; $i<= 4; $i = $i+1): ?>
 	
-	 <?php 
-	 sort($subjects);
-      for($i=0; $i<=4; $i++)
-      
+     <?php 
+     
       {
-      
-      echo "<tr> <td>".$this->Form->input('', array('options' => $subjects,'default'=>null))."</td><td>"."</td><td>";
-      echo $this->Form->input('', array('options' => $Agrades,'default'=>null))."</td></tr>";
-      
-      }  
-      
-      
-      ?>
+      echo "<tr><td>";
+			echo $this->Form->input
+			('AcademicHistoriesSubject.subject_id'.$i, 
+			array('options' => $subjects,
+					'default'=>null,
+					'label'=>false
+				)
+				)."</td><td>";
+			echo $this->Form->input
+			('AcademicHistoriesSubject.grade_id'.$i, 
+				array('options' => $Agrades,
+				'default'=>null,
+				'label'=>false)
+			)."</td><td>";
+			
+			}
+	?>
+     <?php endfor ?>
+	
+	
 	 <tr>
  
  <td>

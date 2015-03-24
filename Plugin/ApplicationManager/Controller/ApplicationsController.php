@@ -103,15 +103,15 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
     function _processCourses(){
+	
 	$this->ApplicationCourse->set($this->data);
         return true;
     }
 
     function _processUace(){
-			$wizardData = $this->Wizard->read();
-			extract($wizardData);
-			pr($wizardData);
-		exit;
+	
+	
+			
 
 		$this->Institution->set($this->data);
 		$this->ContactDetail->set($this->data);
@@ -153,6 +153,9 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
  function _processUce(){
+ 
+ 
+ 
 	$this->Institution->set($this->data);
 	$this->ContactDetail->set($this->data);
 	$this->AcademicHistory->set($this->data);
@@ -169,6 +172,8 @@ class ApplicationsController extends ApplicationManagerAppController {
      //}
 
 	function _processAcademicHistory(){
+	
+	
 		//$this->Person->save();
 		//$person = $this->Person->read('id');
 
@@ -199,6 +204,7 @@ class ApplicationsController extends ApplicationManagerAppController {
       return true;
 	  }
 	  function _processDisabilities(){
+	  
 
 		$this->PeopleDisability->set($this->data);
 

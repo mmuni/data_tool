@@ -25,7 +25,7 @@
 </fieldset>
 <fieldset>
 <legend><?php echo __('Subject Results (Provide Grade such as D1,D2,C3)'); ?></legend>
- <table border="0">
+ <table class='table'>
  
   <thead>
  <tr>
@@ -35,20 +35,20 @@
          </tr>
  
  </thead>
- 
- <?php 
-	sort($subjects);
-      for($i=1; $i<=10; $i++)
-      
+
+ <?php for ($i = 0; $i<= 9; $i = $i+1): ?>
+	
+     <?php 
+     
       {
-		  
-		  
-		 // echo $this->Form->input('Course Type', array('options' => $course_types));
-      echo "<tr> <td>".$this->Form->input('', array('options' => $subjects,'default'=> null)).   "</td><td>";
-      echo $this->Form->input('', array('options' => $Ogrades,'default'=>null))."</td></tr>";
-      
-      }  
-      ?>
+      echo "<tr><td>";
+			echo $this->Form->input('AcademicHistoriesSubject.subject_id'.$i, array('options' => $subjects,'default'=>null,'label'=>false))."</td><td>";
+			echo $this->Form->input('AcademicHistoriesSubject.grade_id'.$i, array('options' => $Ogrades,'default'=>null,'label'=>false))."</td><td>";
+			
+			}
+	?>
+     <?php endfor ?>
+
   </table>
 </fieldset>
  </div>

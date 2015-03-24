@@ -14,7 +14,7 @@
     </tr>
     
       <?php 
-      //echo $this->Form ->create('Career');
+      
       for($i=0; $i<3; $i++)
       {
       echo "<tr><td>";

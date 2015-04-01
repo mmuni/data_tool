@@ -224,6 +224,11 @@ class ApplicationsController extends ApplicationManagerAppController {
 		
       return true;
 	  }
+	function _prepareReview(){
+		$wizardData = $this->Wizard->read();
+		extract($wizardData);
+		$this->set(compact('index', 'biodata', 'address', 'courses', 'uace', 'uce', 'academic_history', 'employee_history', 'english_proficiency', 'disabilities', 'referee', 'feedback', 'review'));
+	}
 	  
 		function _processReview(){
 			$wizardData = $this->Wizard->read();

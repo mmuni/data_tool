@@ -8,9 +8,19 @@
 <fieldset>
 <legend><?php echo __('If you are sure'); ?></legend>
  <?php
-   
 
-
+pr($index);
+pr($biodata);
+pr($address);
+pr($courses);
+pr($uace);
+pr($uce);
+pr($academic_history);
+pr($employee_history);
+pr($english_proficiency);
+pr($disabilities);
+pr($referee);
+pr($feedback);
 
     echo $this->Form->input('', array(
     'type' => 'select',

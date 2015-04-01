@@ -42,7 +42,7 @@ class ApplicationsController extends ApplicationManagerAppController {
 
     public $components = array('Wizard.Wizard');
 
-    // public $layout = 'bootstrap3';
+    public $layout = 'application_wizard';
 
     public function beforeFilter(){
 	    $this->Auth->allow('wizard');
@@ -61,7 +61,7 @@ class ApplicationsController extends ApplicationManagerAppController {
             'feedback',
             'review'
         );
-		//$this->Wizard->roaming =true;
+	$this->Wizard->roaming =true;
         $this->set('countries', $this->Country->find('list'));
         $this->set('courses', $this->Course->find('list'));
         $this->set('course_programmes', $this->CourseProgramme->find('list'));

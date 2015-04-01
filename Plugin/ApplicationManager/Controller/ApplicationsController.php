@@ -90,7 +90,7 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
     function _processBiodata(){
         $this->Person->set($this->data);
-
+		$this->ContactDetail->set($this->data);
         if ($this->Person->validates()) {
             return true;
         }
@@ -226,36 +226,27 @@ class ApplicationsController extends ApplicationManagerAppController {
 	  }
 	  
 		function _processReview(){
-			$wizardData = $this->Wizard->read();
-			extract($wizardData);
-			pr($wizardData);
-		exit;
-      //return true;
+		
+			//$wizardData = $this->Wizard->read();
+			//extract($wizardData);
+			//pr($wizardData);
+		
+      return true;
 	  }
-	protected function _afterComplete() {
+	 function _afterComplete() {
             $wizardData = $this->Wizard->read();
             extract($wizardData);
 
-	$this->Person->save($this->data);
-	$this->Address->save($this->data);
-	$this->ApplicationCourse->save($this->data);
-	$this->Institution->save($this->data);
-	$this->ContactDetail->save($this->data);
-	$this->AcademicHistory->save($this->data);
-	$this->Career->save($this->data);
-	$this->EnglishProficiency->save($this->data);
-	$this->Referee->save($this->data);
-	$this->Feedback->save($this->data);
-	
-	
-	
-	
-	
-	
-	$this->AcademicHistory->save($this->data);
-    
-	
-	
+	$this->Person->save();
+	$this->Address->save();
+	$this->ApplicationCourse->save();
+	$this->Institution->save();
+	$this->ContactDetail->save();
+	$this->AcademicHistory->save();
+	$this->Career->save();
+	$this->EnglishProficiency->save();
+	$this->Referee->save();
+	$this->Feedback->save();	
 	}
 
 

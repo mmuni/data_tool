@@ -25,7 +25,7 @@
 		echo $this->Form->input('Person.fathers_name');
 		echo $this->Form->input('Person.mothers_name');
 
-        #echo $this->Form->label('Person.gender');
+        echo $this->Form->label('Person.gender');
         echo $this->Form->input(
             'Person.gender',
             array(
@@ -44,7 +44,7 @@
             )
         );
 
-		echo $this->Form->input(
+		/*echo $this->Form->input(
             'Application.year_of_examination',
             array(
                 'type' => 'date',
@@ -54,15 +54,15 @@
                 'minYear' => date('Y') - 90,
             )
         );
-
+*/
 
         echo $this->Form->input(
-            'User.email_address',
+            'ContactDetail.email_address',
             array(
                 'type' => 'email',
             )
         );
-		echo $this->Form->input('User.religion');
+		echo $this->Form->input('Person.religion');
 	?>
 	<div class="submit">
 		<?php echo $this->Form->submit('Continue', array('div' => false)); ?>

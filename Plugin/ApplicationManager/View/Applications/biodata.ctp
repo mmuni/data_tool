@@ -57,12 +57,12 @@
 
 
         echo $this->Form->input(
-            'User.email_address',
+            'Person.email_address',
             array(
                 'type' => 'email',
             )
         );
-		echo $this->Form->input('User.religion');
+		echo $this->Form->input('Person.religion');
 	?>
 	<div class="submit">
 		<?php echo $this->Form->submit('Continue', array('div' => false)); ?>

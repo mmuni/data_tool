@@ -79,5 +79,8 @@ $cakeDescription = __d('cake_dev', 'MMU .::. ');
 
 	</div>
 
+<?php
+	echo $this->Js->writeBuffer(); // Write cached scripts
+?>
 </body>
 </html>

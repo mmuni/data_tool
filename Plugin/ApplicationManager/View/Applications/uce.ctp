@@ -15,10 +15,19 @@
         Please submit in your Uganda Certificate of Examination (UCE) OR Equivalent</h5>
  </div>
 <?php		
-  echo $this->Form->input('Institution.name1',array('label'=>'Examining Authority:'));
-  echo $this->Form->input('Institution.name2',array('label'=>'Name of the School:'));
+  echo $this->Form->input('Institution.1.name',array('label'=>'Examining Authority:'));
+  echo $this->Form->input('Institution.2.name',array('label'=>'Name of the School:'));
   echo $this->Form->input('ContactDetail.post_office_box',array('label'=>'Address of the School:'));
-  echo $this->Form->input('AcademicHistory.year_of_completion',array('label'=>'Date of Completion:'));
+  echo $this->Form->input('AcademicHistory.year_of_completion',             array(
+                'type' => 'date',
+                'empty' => false,
+                'inline' => false,
+                'maxYear' => date('Y') - 2,
+                'minYear' => date('Y') - 90,
+                'dateFormat' => 'DMY',
+                'class' => '',
+				'label'=>"Date of Completion:"
+            ));
   echo $this->Form->input('AcademicHistory.index_number',array('label'=>'Index No:'));
 
 ?>
@@ -42,8 +51,8 @@
      
       {
       echo "<tr><td>";
-			echo $this->Form->input('AcademicHistoriesSubject.subject_id'.$i, array('options' => $subjects,'default'=>null,'label'=>false))."</td><td>";
-			echo $this->Form->input('AcademicHistoriesSubject.grade_id'.$i, array('options' => $Ogrades,'default'=>null,'label'=>false))."</td><td>";
+			echo $this->Form->input('AcademicHistoriesSubject.'.$i.'.subject_id', array('options' => $subjects,'label'=>false,'empty'=>'select subject'))."</td><td>";
+			echo $this->Form->input('AcademicHistoriesSubject.'.$i.'.grade_id', array('options' => $Ogrades,'label'=>false,'empty'=>'select grade'))."</td><td>";
 			
 			}
 	?>

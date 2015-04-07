@@ -97,6 +97,34 @@ class ApplicationsController extends ApplicationManagerAppController {
         return false;
     }
 
+    function _prepareBiodata(){
+      $religions = array(
+        'christianity' => 'Christian',
+        'islam' => 'Islam',
+        'secular' => 'Secular/Nonreligious/Agnostic/Atheist',
+        'hinduism' => 'Hinduism',
+        'chinese' => 'Chinese Traditional Religion',
+        'buddhism' => 'Buddhism',
+        'primal-indigenous' => 'Primal Indigenous',
+        'african' => 'African Traditional & Diasporic',
+        'sikhism' => 'Sikhism',
+        'juche' => 'Juche',
+        'spiritism' => 'Spiritism',
+        'judaism' => 'Judaism',
+        'bahai' => "Baha'i",
+        'jainism' => 'Jainism',
+        'shinto' => 'Shinto',
+        'cao-dai' => 'Cao Dai',
+        'zoroastrianism' => 'Zoroastrianism',
+        'tenrikyo' => 'Tenrikyo',
+        'neo-paganism' => 'Neo-Paganism',
+        'unitarian-universalism' => 'Unitarian-Universalism',
+        'rastafarianism' => 'Rastafarianism',
+        'scientology' => 'Scientology'
+      );
+      $this->set(compact('religions'));
+    }
+
     function _processAddress(){
 	 $this->Address->set($this->data);
         return true;

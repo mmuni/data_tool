@@ -13,8 +13,8 @@
 
 </div>
 	<?php
-    echo $this->Form->input('Institution.name1', array('label'=>"Examining Authority:"));
-	echo $this->Form->input('Institution.name2', array('label'=>"Name of the School:"));
+    echo $this->Form->input('Institution.1.name', array('label'=>"Examining Authority:"));
+	echo $this->Form->input('Institution.2.name', array('label'=>"Name of the School:"));
 	echo $this->Form->input('ContactDetail.post_office_box', array('label'=>"Address of the School:"));
 	echo $this->Form->input('AcademicHistory.year_of_completion',             array(
                 'type' => 'date',
@@ -49,14 +49,14 @@
       {
       echo "<tr><td>";
 			echo $this->Form->input
-			('AcademicHistoriesSubject.subject_id'.$i, 
+			('AcademicHistoriesSubject.'.$i.'.subject_id',
 			array('options' => $subjects,
 					'default'=>null,
 					'label'=>false
 				)
 				)."</td><td>";
 			echo $this->Form->input
-			('AcademicHistoriesSubject.grade_id'.$i, 
+			('AcademicHistoriesSubject.'.$i.'.grade_id',
 				array('options' => $Agrades,
 				'default'=>null,
 				'label'=>false)

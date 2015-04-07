@@ -11,7 +11,8 @@
 		echo $this->Form->input('Address.city');
         echo $this->Form->input('Address.country', array(
             'options' => $countries,
-            'selected' => 'Uganda'
+            'selected' => 'Uganda',
+            'default' => 'Uganda',
         ));
 		echo $this->Form->input('Address.zipcode');
 		echo $this->Form->input('Address.address_line_1');

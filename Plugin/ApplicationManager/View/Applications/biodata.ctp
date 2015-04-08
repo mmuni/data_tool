@@ -25,7 +25,6 @@
 		echo $this->Form->input('Person.fathers_name');
 		echo $this->Form->input('Person.mothers_name');
 
-        echo $this->Form->label('Person.gender');
         echo $this->Form->input(
             'Person.gender',
             array(

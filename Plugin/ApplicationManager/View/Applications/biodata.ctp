@@ -66,7 +66,7 @@
 
 		
 	echo $this->Form->input('Person.religion', array(
-		'options' => $religion,
+		'options' => $religions,
 		'default' => 'christianity',
 	));
 	?>

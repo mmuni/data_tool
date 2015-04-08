@@ -42,7 +42,7 @@ class ApplicationsController extends ApplicationManagerAppController {
 
     public $components = array('Wizard.Wizard');
 
-    // public $layout = 'bootstrap3';
+    public $layout = 'application_wizard';
 
     public function beforeFilter(){
 	    $this->Auth->allow('wizard');
@@ -61,7 +61,7 @@ class ApplicationsController extends ApplicationManagerAppController {
             'feedback',
             'review'
         );
-		//$this->Wizard->roaming =true;
+	$this->Wizard->roaming =true;
         $this->set('countries', $this->Country->find('list'));
         $this->set('courses', $this->Course->find('list'));
         $this->set('course_programmes', $this->CourseProgramme->find('list'));
@@ -95,6 +95,34 @@ class ApplicationsController extends ApplicationManagerAppController {
             return true;
         }
         return false;
+    }
+
+    function _prepareBiodata(){
+      $religions = array(
+        'christianity' => 'Christian',
+        'islam' => 'Islam',
+        'secular' => 'Secular/Nonreligious/Agnostic/Atheist',
+        'hinduism' => 'Hinduism',
+        'chinese' => 'Chinese Traditional Religion',
+        'buddhism' => 'Buddhism',
+        'primal-indigenous' => 'Primal Indigenous',
+        'african' => 'African Traditional & Diasporic',
+        'sikhism' => 'Sikhism',
+        'juche' => 'Juche',
+        'spiritism' => 'Spiritism',
+        'judaism' => 'Judaism',
+        'bahai' => "Baha'i",
+        'jainism' => 'Jainism',
+        'shinto' => 'Shinto',
+        'cao-dai' => 'Cao Dai',
+        'zoroastrianism' => 'Zoroastrianism',
+        'tenrikyo' => 'Tenrikyo',
+        'neo-paganism' => 'Neo-Paganism',
+        'unitarian-universalism' => 'Unitarian-Universalism',
+        'rastafarianism' => 'Rastafarianism',
+        'scientology' => 'Scientology'
+      );
+      $this->set(compact('religions'));
     }
 
     function _processAddress(){
@@ -224,6 +252,11 @@ class ApplicationsController extends ApplicationManagerAppController {
 		
       return true;
 	  }
+	function _prepareReview(){
+		$wizardData = $this->Wizard->read();
+		extract($wizardData);
+		$this->set(compact('index', 'biodata', 'address', 'courses', 'uace', 'uce', 'academic_history', 'employee_history', 'english_proficiency', 'disabilities', 'referee', 'feedback', 'review'));
+	}
 	  
 		function _processReview(){
 		

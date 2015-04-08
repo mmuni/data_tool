@@ -29,7 +29,7 @@ $cakeDescription = __d('cake_dev', 'MMU .::. ');
 	<?php
 		echo $this->Html->meta('icon');
 		echo $this->Html->css(array('bootstrap.min', 'mmu'));
-		echo $this->Html->script(array('jquery-1.11.2.min', 'jquery-migrate-1.2.1.min', 'bootstrap.min'));
+		echo $this->Html->script(array('jquery-1.11.2.min', 'jquery-migrate-1.2.1.min', 'bootstrap.min', 'holder'));
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -79,5 +79,8 @@ $cakeDescription = __d('cake_dev', 'MMU .::. ');
 
 	</div>
 
+<?php
+	echo $this->Js->writeBuffer(); // Write cached scripts
+?>
 </body>
 </html>

@@ -57,12 +57,19 @@
 */
 
         echo $this->Form->input(
+
             'ContactDetail.email_address',
+
             array(
                 'type' => 'email',
             )
         );
-		echo $this->Form->input('Person.religion');
+
+		
+	echo $this->Form->input('Person.religion', array(
+		'options' => $religion,
+		'default' => 'christianity',
+	));
 	?>
 	<div class="submit">
 		<?php echo $this->Form->submit('Continue', array('div' => false)); ?>

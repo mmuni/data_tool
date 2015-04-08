@@ -33,10 +33,11 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 
     public $helpers = array(
+        'Js' => array('Jquery'),
         'Form' => array(
             'className' => 'Bs3Helpers.Bs3Form'
         ),
-		
+
     );
 	public $components = array(
 	    'Session',
@@ -57,7 +58,7 @@ class AppController extends Controller {
 			)
 		)
 	);
-	
+
 	public function beforeFilter (){
 		parent::beforeFilter();
 		$this->Auth->allow('display');

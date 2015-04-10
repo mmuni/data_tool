@@ -13,17 +13,17 @@
         
     </tr>
     
-      <?php 
-      
+<?php 
       for($i=0; $i<3; $i++)
       {
-      echo "<tr><td>";
-      echo $this->form->input('Institution.institution'.$i, array('label'=>false))."</td><td>";
-      echo $this->form->input('AcademicHistory.qualification_name'.$i, array('label'=>false))."</td><td>";
-      echo $this->form->input('AcademicHistory.year_of_completion'.$i, array('label'=>false))."</td><td>";
-      
+	      echo "<tr>";
+	      echo "<td>" . $this->form->input('Institution.'.$i.'.institution', array('label'=>false)) . "</td>";
+	      echo "<td>" . $this->form->input('AcademicHistory.'.$i.'.qualification_name', array('label'=>false)) . "</td>";
+	      echo "<td>" . $this->form->input('AcademicHistory.'.$i.'.year_of_completion', array('label'=>false)) . "</td>";
+	      echo "</tr>";
       } 
 ?>
+</table>
 
 
 

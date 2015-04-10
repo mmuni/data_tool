@@ -11,6 +11,10 @@ class ApplicationsController extends ApplicationManagerAppController {
  *
  * @var mixed
  */
+    public $helpers = array(
+	    'Wizard'
+    );
+
     public $uses = array(
         'ApplicationManager.Application',
         'Country',

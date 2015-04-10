@@ -127,16 +127,20 @@ class WizardHelper extends AppHelper
             if (!$incomplete) {
                 if ($step == $expectedStep) {
                     $incomplete = true;
-                    $class      = 'expected';
+                    $class      = ' expected';
                 } else {
-                    $class = 'complete';
+                    $class = ' complete';
                 }
                 if ($step == $activeStep) {
                     $class .= ' active';
                 }
-                $this->output .= "<$wrap class='$class'>" . $this->Html->link($title, array('action' => $wizardAction, $step), $htmlAttributes, $confirmMessage, $escapeTitle) . "</$wrap>";
+		$a = $htmlAttributes;
+		$a['class'] .= $class;
+                $this->output .= $this->Html->link($title, array('action' => $wizardAction, $step), $a, $confirmMessage, $escapeTitle);
             } else {
-                $this->output .= "<$wrap class='incomplete'>" . $title . "</$wrap>";
+		$a = $htmlAttributes;
+		$a['class'] .= ' disabled';
+                $this->output .= $this->Html->link($title, '#', $a, $confirmMessage, $escapeTitle);
             }
         }
 

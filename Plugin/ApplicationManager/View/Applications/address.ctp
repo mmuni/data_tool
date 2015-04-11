@@ -9,11 +9,7 @@
 		echo $this->Form->input('Address.sub_county');
 		echo $this->Form->input('Address.district');
 		echo $this->Form->input('Address.city');
-        echo $this->Form->input('Address.country', array(
-            'options' => $countries,
-            'selected' => 'Uganda',
-            'default' => 'Uganda',
-        ));
+		echo $this->Form->input('Address.country', array('options' => $countries, 'empty' => 'Select Country'));
 		echo $this->Form->input('Address.zipcode');
 		echo $this->Form->input('Address.address_line_1');
 		echo $this->Form->input('Address.address_line_2');

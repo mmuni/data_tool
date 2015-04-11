@@ -6,7 +6,7 @@
 	<h2>Step 2: Personal Biodata</h2>
 	<?php
 		echo $this->Form->input('Person.surname');
-		echo $this->Form->input('Person.first_name');
+		echo $this->Form->input('Person.othername');
 		echo $this->Form->input('Person.place_of_birth');
 
 		echo $this->Form->input(

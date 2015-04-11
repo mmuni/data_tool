@@ -28,13 +28,14 @@
      
       {
       echo "<tr><td>";
-			echo $this->Form->input('Career.company_name'.$i, array('label'=>false))."</td><td>";
-			echo $this->Form->input('ContactDetail.post_office_box'.$i, array('label'=>false))."</td><td>";
-			echo $this->Form->input('ContactDetail.telephone'.$i, array('label'=>false))."</td><td>";
-			echo $this->Form->input('ContactDetail.email'.$i, array('label'=>false))."</td><td>";
-			echo $this->Form->input('Career.position_held'.$i, array('label'=>false))."</td><td>";
-			echo $this->Form->input('Career.date_started'.$i, array('label'=>false))."</td><td>";
-			echo $this->Form->input('Career.date_ended'.$i, array('label'=>false))."</td><td>";
+			echo $this->Form->input('Career.'.$i.'.company_name', array('label'=>false))."</td><td>";
+			echo $this->Form->input('ContactDetail.'.$i.'.post_office_box', array('label'=>false))."</td><td>";
+			echo $this->Form->input('ContactDetail.'.$i.'.telephone', array('label'=>false))."</td><td>";
+			echo $this->Form->input('ContactDetail.'.$i.'.email', array('label'=>false))."</td><td>";
+			echo $this->Form->input('Career.'.$i.'.position_held', array('label'=>false))."</td><td>";
+			echo $this->Form->input('Career.'.$i.'.date_started', array('label'=>false))."</td><td>";
+			echo $this->Form->input('Career.'.$i.'.date_ended', array('label'=>false))."</td>";
+	echo "</tr>";
 			}
 	?>
      <?php endfor ?>

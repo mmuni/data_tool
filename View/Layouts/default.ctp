@@ -50,6 +50,10 @@ $cakeDescription = __d('cake_dev', 'MMU .::. ');
 					<li><a href="/applications">Applications</a></li>
 
 					<?php if ($this->Session->read('Auth.User')): ?>
+						<li><a href="/users/profile">
+							<?= $this->Session->read('Auth.User.username'); ?></a>
+							(<?= $this->Session->read('Auth.User.role'); ?>)
+						</li>
 						<li><a href="/users/logout">Logout</a></li>
 					<?php else: ?>
 						<li><a href="/users/login">Login</a></li>

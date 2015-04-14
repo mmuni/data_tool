@@ -1,12 +1,11 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * University Model
+ * module Model
  *
- * @property Address $Address
- * @property School $School
+ * @property Course $Course
  */
-class University extends AppModel {
+class module extends AppModel {
 
 /**
  * Validation rules
@@ -14,6 +13,16 @@ class University extends AppModel {
  * @var array
  */
 	public $validate = array(
+		'code' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 		'name' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
@@ -24,7 +33,7 @@ class University extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'status' => array(
+		'credit_units' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
@@ -34,9 +43,9 @@ class University extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'date_started' => array(
-			'date' => array(
-				'rule' => array('date'),
+		'type' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -45,8 +54,8 @@ class University extends AppModel {
 			),
 		),
 		'deleted' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+			'boolean' => array(
+				'rule' => array('boolean'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -59,36 +68,23 @@ class University extends AppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
- * hasMany associations
+ * hasAndBelongsToMany associations
  *
  * @var array
  */
-	public $hasMany = array(
-		'Address' => array(
-			'className' => 'Address',
-			'foreignKey' => 'university_id',
-			'dependent' => false,
+	public $hasAndBelongsToMany = array(
+		'Course' => array(
+			'className' => 'Course',
+			'joinTable' => 'courses_modules',
+			'foreignKey' => 'module_id',
+			'associationForeignKey' => 'course_id',
+			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
 			'limit' => '',
 			'offset' => '',
-			'exclusive' => '',
 			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'School' => array(
-			'className' => 'School',
-			'foreignKey' => 'university_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
 		)
 	);
 

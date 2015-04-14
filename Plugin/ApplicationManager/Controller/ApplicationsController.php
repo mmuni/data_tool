@@ -37,7 +37,7 @@ class ApplicationsController extends ApplicationManagerAppController {
 		'Disability',
 		'Feedback',
 		'Address',
-		'ApplicationCourse',
+		'ApplicationsCourses',
 		'EnglishProficiency',
 		'Career',
 		'PeopleDisability',
@@ -82,6 +82,9 @@ class ApplicationsController extends ApplicationManagerAppController {
         $this->redirect('wizard');
     }
 
+    public function resume(){
+    }
+
     public function wizard($step = null) {
         $this->Wizard->process($step);
     }
@@ -95,7 +98,7 @@ class ApplicationsController extends ApplicationManagerAppController {
     function _processBiodata(){
         $this->Person->set($this->data);
 		$this->ContactDetail->set($this->data);
-        if ($this->Person->validates()) {
+        if ($this->Person->validates() && $this->ContactDetail->validates()) {
             return true;
         }
         return false;
@@ -130,20 +133,24 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
     function _processAddress(){
-	 $this->Address->set($this->data);
-        return true;
+	    $this->Address->set($this->data);
+
+	    if ($this->Address->validates()) {
+		    return true;
+	    }
+	    return false;
     }
 
     function _processCourses(){
-	
-	$this->ApplicationCourse->set($this->data);
+
+	$this->ApplicationsCourses->set($this->data);
         return true;
     }
 
     function _processUace(){
-	
-	
-			
+
+
+
 
 		$this->Institution->set($this->data);
 		$this->ContactDetail->set($this->data);
@@ -185,9 +192,9 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
  function _processUce(){
- 
- 
- 
+
+
+
 	$this->Institution->set($this->data);
 	$this->ContactDetail->set($this->data);
 	$this->AcademicHistory->set($this->data);
@@ -204,8 +211,8 @@ class ApplicationsController extends ApplicationManagerAppController {
      //}
 
 	function _processAcademicHistory(){
-	
-	
+
+
 		//$this->Person->save();
 		//$person = $this->Person->read('id');
 
@@ -222,10 +229,10 @@ class ApplicationsController extends ApplicationManagerAppController {
     }
 
 	function _processEmployeeHistory(){
-		
+
 		$this->Career->set($this->data);
 		$this->ContactDetail->set($this->data);
-		
+
 
       return true;
 	  }
@@ -236,7 +243,7 @@ class ApplicationsController extends ApplicationManagerAppController {
       return true;
 	  }
 	  function _processDisabilities(){
-	  
+
 
 		$this->PeopleDisability->set($this->data);
 
@@ -246,14 +253,14 @@ class ApplicationsController extends ApplicationManagerAppController {
 	  function _processReferee(){
 
 		$this->Referee->set($this->data);
-		
+
       return true;
 	  }
 	  function _processFeedback(){
 
-	
+
 		$this->Feedback->set($this->data);
-		
+
       return true;
 	  }
 	function _prepareReview(){
@@ -261,13 +268,13 @@ class ApplicationsController extends ApplicationManagerAppController {
 		extract($wizardData);
 		$this->set(compact('index', 'biodata', 'address', 'courses', 'uace', 'uce', 'academic_history', 'employee_history', 'english_proficiency', 'disabilities', 'referee', 'feedback', 'review'));
 	}
-	  
+
 		function _processReview(){
-		
+
 			//$wizardData = $this->Wizard->read();
 			//extract($wizardData);
 			//pr($wizardData);
-		
+
       return true;
 	  }
 	 function _afterComplete() {
@@ -276,14 +283,14 @@ class ApplicationsController extends ApplicationManagerAppController {
 
 	$this->Person->save();
 	$this->Address->save();
-	$this->ApplicationCourse->save();
+	$this->ApplicationsCourses->save();
 	$this->Institution->save();
 	$this->ContactDetail->save();
 	$this->AcademicHistory->save();
 	$this->Career->save();
 	$this->EnglishProficiency->save();
 	$this->Referee->save();
-	$this->Feedback->save();	
+	$this->Feedback->save();
 	}
 
 

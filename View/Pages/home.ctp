@@ -15,6 +15,10 @@
 				I want to <?php echo $this->Html->link('Start My Application', '/applications'); ?>.
 			</li>
 			<li class="list-group-item">
+				<i class="glyphicon glyphicon-edit"></i>
+				I want to <?php echo $this->Html->link('Resume My Application', '/applications/resume'); ?>.
+			</li>
+			<li class="list-group-item">
 				<i class="glyphicon glyphicon-eye-open"></i>
 				See what you should do <?php echo $this->Html->link('after you apply', '/'); ?>.
 			</li>
@@ -24,9 +28,9 @@
 
 <h3>What you'll need</h3>
 
-It is a good idea to have everything prepared before you start your application 
-so you are not trying to track down information at the last minute. To 
-understand what you will need <b>in general</b>, ensure that you have read and 
+It is a good idea to have everything prepared before you start your application
+so you are not trying to track down information at the last minute. To
+understand what you will need <b>in general</b>, ensure that you have read and
 understood what is written on these pages:
 
 <ol>
@@ -40,12 +44,13 @@ For this online application, specifically, here is what you will need:
 
     <li>Scanned copies of your previous academic certifications.</li>
     <li>Receipt Number for a valid reciept recieved after payment</li>
+    <li>Bank Transfer number</li>
 </ol>
 
 <h2>Technical issues</h2>
 <h3>Browser recommendations</h3>
 
-The MMU online application functions with the following internet browser versions: 
+The MMU online application functions with the following internet browser versions:
 <table class="table">
 	<tr>
 		<th>Browser</th>

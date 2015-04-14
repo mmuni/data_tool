@@ -1,12 +1,14 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * University Model
+ * department Model
  *
- * @property Address $Address
  * @property School $School
+ * @property Course $Course
+ * @property DepartmentPerson $DepartmentPerson
+ * @property StaffHistory $StaffHistory
  */
-class University extends AppModel {
+class department extends AppModel {
 
 /**
  * Validation rules
@@ -24,7 +26,7 @@ class University extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'status' => array(
+		'campus' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
@@ -34,9 +36,9 @@ class University extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'date_started' => array(
-			'date' => array(
-				'rule' => array('date'),
+		'school_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -45,8 +47,8 @@ class University extends AppModel {
 			),
 		),
 		'deleted' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+			'boolean' => array(
+				'rule' => array('boolean'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -59,14 +61,29 @@ class University extends AppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
+ * belongsTo associations
+ *
+ * @var array
+ */
+	public $belongsTo = array(
+		'School' => array(
+			'className' => 'School',
+			'foreignKey' => 'school_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
+
+/**
  * hasMany associations
  *
  * @var array
  */
 	public $hasMany = array(
-		'Address' => array(
-			'className' => 'Address',
-			'foreignKey' => 'university_id',
+		'Course' => array(
+			'className' => 'Course',
+			'foreignKey' => 'department_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
@@ -77,9 +94,22 @@ class University extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'School' => array(
-			'className' => 'School',
-			'foreignKey' => 'university_id',
+		'DepartmentPerson' => array(
+			'className' => 'DepartmentPerson',
+			'foreignKey' => 'department_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'StaffHistory' => array(
+			'className' => 'StaffHistory',
+			'foreignKey' => 'department_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',

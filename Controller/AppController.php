@@ -32,25 +32,25 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-    public $helpers = array(
-        'Js' => array('Jquery'),
-        'Form' => array(
-            'className' => 'Bs3Helpers.Bs3Form'
-        ),
+	public $helpers = array(
+		'Js' => array('Jquery'),
+		'Form' => array(
+			'className' => 'Bs3Helpers.Bs3Form'
+		),
 
-    );
+	);
 	public $components = array(
-	    'Session',
-	    'DebugKit.Toolbar',
+		'Session',
+		'DebugKit.Toolbar',
 		'Auth'=> array(
-			'LoginRedirect' => array(
-					'controller' => 'user',
-					'action' => 'index'
-					),
+			'loginRedirect' => array(
+				'controller' => 'users',
+				'action' => 'dashboard'
+			),
 			'logoutRedirect' => array(
-					'controller' => 'pages',
-					'action' => 'display','home'
-					),
+				'controller' => 'pages',
+				'action' => 'display','home'
+			),
 			'authenticate' => array(
 				'Form' => array(
 					'passwordHasher' => 'Blowfish'

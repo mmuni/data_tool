@@ -26,23 +26,30 @@ $cakeDescription = __d('cake_dev', 'MMU .::. ');
 		<?php echo $cakeDescription ?>
 		<?php echo $this->fetch('title'); ?>
 	</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
+	<script src="//code.highcharts.com/highcharts.js"></script>
 	<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->css(array('bootstrap.min', 'mmu'));
-		echo $this->Html->script(array('jquery-1.11.2.min', 'jquery-migrate-1.2.1.min', 'bootstrap.min', 'holder', 'highcharts'));
+		echo $this->Html->css(array('mmu'));
+		echo $this->Html->script(array('holder', 'highcharts'));
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+
+
 </head>
 <body>
 
 	<nav class="navbar navbar-default" role="navigation">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/">
-					<img alt="Mountains of the Moon University Logo" src="/img/mmuLogo.png">
-					Mountains of the Moon University
+				<a href="/" class="navbar-brand">
+					<img class="pull-left" alt="Mountains of the Moon University Logo" src="/img/mmuLogo.png"></img>
+					<span>Mountains of the Moon University</span>
 				</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -53,8 +60,8 @@ $cakeDescription = __d('cake_dev', 'MMU .::. ');
 						<li><a href="/users/logout"><i class="glyphicon glyphicon-log-out"></i>&nbsp;<?= $this->Session->read('Auth.User.username'); ?></a></li>
 
 					<?php else: ?>
-						<li><a href="/applications"><i class="glyphicon glyphicon-list-alt"></i> Applications</a></li>
-						<li><a href="/users/login">Login</a></li>
+						<li><a href="/applications"><i class="glyphicon glyphicon-list-alt"></i></a></li>
+						<li><a href="/users/login"><i class="glyphicon glyphicon-log-in"></i></a></li>
 					<?php endif ?>
 				</ul>
 			</div>

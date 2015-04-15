@@ -3,3 +3,4 @@ nbproject
 phpmyadmin
 Config/database.php
 Config/core.php
+vendor/

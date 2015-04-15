@@ -1,0 +1,15 @@
+{
+    "name": "mmu/data_tool",
+    "description": "Data collection tool for MMU",
+    "require": {
+        "cakephp/cakephp": "2.6.*",
+	"ircmaxell/random-lib": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Atukunda",
+            "email": "matlads@gmail.com"
+        }
+    ]
+}

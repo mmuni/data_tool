@@ -22,6 +22,15 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
+// Load Composer autoload.
+require APP . 'Vendor/autoload.php';
+
+// Remove and re-prepend CakePHP's autoloader as Composer thinks it is the
+// most important.
+// See: http://goo.gl/kKVJO7
+spl_autoload_unregister(array('App', 'load'));
+spl_autoload_register(array('App', 'load'), true, true);
+
 // Setup a 'default' cache configuration for use in the application.
 Cache::config('default', array('engine' => 'File'));
 
@@ -50,6 +59,14 @@ Cache::config('default', array('engine' => 'File'));
  * ));
  *
  */
+
+App::build(
+  [
+      'Plugin' => [ROOT . '/Plugin/', ROOT . '/app/Plugin/'],
+      'Vendor' => [ROOT . '/vendor/', ROOT . '/app/Vendor/']
+  ],
+  App::RESET
+);
 
 /**
  * Custom Inflector rules can be set to correctly pluralize or singularize table, model, controller names or whatever other

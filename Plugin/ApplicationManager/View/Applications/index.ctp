@@ -8,7 +8,7 @@
 	<h2>Step 1: Sign in</h2>
 	<?php
 		echo $this->Form->input('Person.phone_number');
-		echo $this->Form->input('Application.code');
+		echo $this->Form->input('Application.code', array('placeholder' => $code));
 		echo $this->Form->input('Application.reciept_number');
 	?>
 	<div class="submit">

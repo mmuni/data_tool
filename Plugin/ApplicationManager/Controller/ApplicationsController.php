@@ -1,5 +1,8 @@
 <?php
 App::uses('ApplicationManagerAppController', 'ApplicationManager.Controller');
+
+use RandomLib\Factory;
+
 /**
  * Applications Controller
  *
@@ -92,6 +95,14 @@ class ApplicationsController extends ApplicationManagerAppController {
 /**
  * [Wizard Process Callbacks]
  */
+    function _prepareIndex(){
+	    $factory = new RandomLib\Factory;
+	    $generator = $factory->getLowStrengthGenerator();
+	    $code = $generator->generate(8);
+
+	    $this->set('code', $code);
+    }
+
     function _processIndex(){
       return true;
     }

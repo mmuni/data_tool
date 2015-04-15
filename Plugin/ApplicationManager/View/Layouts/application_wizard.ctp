@@ -18,7 +18,7 @@
 		<div class="container">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="/">
-					<img alt="Mountains of the Moon University Logo" src="/img/mmulogo.png">
+					<img alt="Mountains of the Moon University Logo" src="/img/mmuLogo.png">
 					Mountains of the Moon University
 				</a>
 			</div>

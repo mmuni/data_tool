@@ -23,7 +23,7 @@
  */
 
 // Load Composer autoload.
-require APP . 'Vendor/autoload.php';
+require APP . 'vendor/autoload.php';
 
 // Remove and re-prepend CakePHP's autoloader as Composer thinks it is the
 // most important.
@@ -59,14 +59,6 @@ Cache::config('default', array('engine' => 'File'));
  * ));
  *
  */
-
-App::build(
-  [
-      'Plugin' => [ROOT . '/Plugin/', ROOT . '/app/Plugin/'],
-      'Vendor' => [ROOT . '/vendor/', ROOT . '/app/Vendor/']
-  ],
-  App::RESET
-);
 
 /**
  * Custom Inflector rules can be set to correctly pluralize or singularize table, model, controller names or whatever other

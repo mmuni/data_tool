@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 14, 2015 at 10:17 AM
+-- Generation Time: Apr 15, 2015 at 04:29 AM
 -- Server version: 5.6.23
 -- PHP Version: 5.5.22
 
@@ -767,7 +767,7 @@ CREATE TABLE IF NOT EXISTS `departments` (
   PRIMARY KEY (`id`),
   KEY `school_id` (`school_id`),
   KEY `school_id_2` (`school_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `departments`
@@ -782,7 +782,9 @@ INSERT INTO `departments` (`id`, `name`, `campus`, `school_id`, `created`, `modi
 (6, 'Department of Education', 'SAAKA', 3, '2015-04-14 09:41:25', '2015-04-14 09:41:25', 0),
 (7, 'Department of Science Education', 'SAAKA', 3, '2015-04-14 09:42:01', '2015-04-14 09:42:01', 0),
 (8, 'Department of Arts Education', 'SSAKA', 3, '2015-04-14 09:42:17', '2015-04-14 09:42:17', 0),
-(9, 'Department of Educational Foundations and Management', 'SAAKA', 3, '2015-04-14 09:42:35', '2015-04-14 09:42:35', 0);
+(9, 'Department of Educational Foundations and Management', 'SAAKA', 3, '2015-04-14 09:42:35', '2015-04-14 09:42:35', 0),
+(10, 'Department of Public Health', 'SAAKA', 4, '2015-04-15 03:43:15', '2015-04-15 03:43:15', 0),
+(11, 'Department of Horticulture', 'SAAKA', 5, '2015-04-15 03:43:38', '2015-04-15 03:43:38', 0);
 
 -- --------------------------------------------------------
 
@@ -1196,7 +1198,7 @@ CREATE TABLE IF NOT EXISTS `schools` (
   `modified` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `university_id` (`university_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `schools`
@@ -1205,7 +1207,9 @@ CREATE TABLE IF NOT EXISTS `schools` (
 INSERT INTO `schools` (`id`, `name`, `campus`, `deleted`, `university_id`, `modified`) VALUES
 (1, 'School of Business', 'SAAKA', 0, 0, 127),
 (2, 'School of Informatics and Computing', 'SAAKA', 0, 0, 127),
-(3, 'School of Education', 'SAAKA', 0, 0, 127);
+(3, 'School of Education', 'SAAKA', 0, 0, 127),
+(4, 'School of Health Sciences', 'SAAKA', 0, 0, 127),
+(5, 'School of Agricultural & Environmental Sciences', 'SAAKA', 0, 0, 127);
 
 -- --------------------------------------------------------
 

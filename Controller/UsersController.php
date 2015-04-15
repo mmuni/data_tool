@@ -134,7 +134,7 @@ class UsersController extends AppController {
 			if ($this->Auth->login()) {
 				$this->Session->setFlash(__('Welcome, '. $this->Auth->user('username')));
 				// Redirect to wherever the user was going before being forced to login
-				$this->redirect($this->Auth->redirectUrl());
+				return $this->redirect($this->Auth->redirectUrl());
 			} else {
 				$this->Session->setFlash(__('Invalid username or password'));
 			}

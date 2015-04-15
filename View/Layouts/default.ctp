@@ -47,15 +47,13 @@ $cakeDescription = __d('cake_dev', 'MMU .::. ');
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/applications">Applications</a></li>
-
 					<?php if ($this->Session->read('Auth.User')): ?>
-						<li><a href="/users/profile">
-							<?= $this->Session->read('Auth.User.username'); ?></a>
-							(<?= $this->Session->read('Auth.User.role'); ?>)
-						</li>
-						<li><a href="/users/logout">Logout</a></li>
+						<li><a href="/users/dashboard"><i class="glyphicon glyphicon-dashboard"></i></a></li>
+						<li><a href="/users/profile"><i class="glyphicon glyphicon-user"></i></a></li>
+						<li><a href="/users/logout"><i class="glyphicon glyphicon-log-out"></i>&nbsp;<?= $this->Session->read('Auth.User.username'); ?></a></li>
+
 					<?php else: ?>
+						<li><a href="/applications"><i class="glyphicon glyphicon-list-alt"></i> Applications</a></li>
 						<li><a href="/users/login">Login</a></li>
 					<?php endif ?>
 				</ul>

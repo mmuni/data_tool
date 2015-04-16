@@ -38,10 +38,10 @@
 
 	<div id="container" class="container">
 		<div id="page" class="row">
-			<div id="sidebar" class="col-md-3">
+			<div id="sidebar" class="col-md-2">
 				<?php echo $this->element('wizard_sidebar'); ?>
 			</div>
-			<div id="content" class="col-md-9">
+			<div id="content" class="col-md-10">
 				<?php echo $this->fetch('content');?>
 			</div>
 		</div>

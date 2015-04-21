@@ -25,20 +25,20 @@ class Person extends AppModel {
 	
 
 
-/**
- * Validation rules
- *
- * @var array
- *//*
+
+ // Validation rules
+ 
+ //@var array
+ 
 	public $validate = array(
 		'surname' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				'message' => 'Your custom message here',
+				'allowEmpty' => false,
+				'required' => false,
+				'last' => false, // Stop validation after this rule
+				'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 			'maxLength' => array(
 				'rule' => array('maxLength'),
@@ -129,7 +129,7 @@ class Person extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-	);*/
+	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 

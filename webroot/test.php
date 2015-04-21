@@ -61,6 +61,10 @@ if (!defined('APP_DIR')) {
  */
 //define('CAKE_CORE_INCLUDE_PATH', ROOT . DS . 'lib');
 
+define(
+	'CAKE_CORE_INCLUDE_PATH',
+	ROOT . DS . APP_DIR . DS . 'Vendor' . DS . 'cakephp' . DS . 'cakephp' . DS . 'lib'
+);
 /**
  * Editing below this line should not be necessary.
  * Change at your own risk.

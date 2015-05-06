@@ -19,7 +19,8 @@
 			<?php echo $this->Form->input('Person.firstname'); ?>
 			<?php echo $this->Form->input('Person.lastname'); ?>
 			<?php echo $this->Form->input('Person.phone_number'); ?>
-			<?php echo $this->Form->input('Person.email'); ?>
+            <?php echo $this->Form->input('Person.email', array(
+                'label' => 'Email (optional)' )); ?>
 
 			<?php echo $this->Form->submit('Create', array('div' => false, 'class' => 'btn')); ?>
 		</div>

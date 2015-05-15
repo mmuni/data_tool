@@ -9,7 +9,7 @@ Clone this repository to create the app directory of the CakePHP installation li
         git clone https://github.com/mmuni/data_tool
         cd data_tool
 
-install `composer’ from http://getcomposer.org
+install composer from http://getcomposer.org
 
         curl -sS https://getcomposer.org/installer | php
 
@@ -18,6 +18,7 @@ install the dependencies using the recently installed composer
         php composer.phar update
 
 setup the database
+
         cp Config/database.php.default Config/database.php
         edit Config/database.php
 

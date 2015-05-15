@@ -17,6 +17,10 @@ install the dependencies using the recently installed composer
 
         php composer.phar update
 
+setup the database
+        cp Config/database.php.default Config/database.php
+        edit Config/database.php
+
 Then start the builtin cakephp server like so:
 
         Vendor/bin/cake server --port 4000

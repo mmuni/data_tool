@@ -7,7 +7,7 @@
 
 <div class="row">
     <div class="col-md-6">
-        <?php echo $this->Form->input('Appplication.code', array('value' => $code, 'disabled' => true, 'label' => 'Application specific code')); ?>
+        <?php echo $this->Form->input('Appplication.code', array('value' => $code, 'label' => 'Application specific code')); ?>
         <?php echo $this->Form->submit('Start', array('div' => false, 'class' => 'btn btn-primary')); ?>
     </div>
 </div>

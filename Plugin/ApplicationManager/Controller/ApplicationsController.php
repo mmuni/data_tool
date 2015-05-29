@@ -96,15 +96,13 @@ class ApplicationsController extends ApplicationManagerAppController {
  * [Wizard Process Callbacks]
  */
     function _prepareIndex(){
-	    $factory = new RandomLib\Factory;
-	    $generator = $factory->getLowStrengthGenerator();
-	    $code = $generator->generate(8);
-
+        $code = uniqid();
 	    $this->set('code', $code);
     }
 
     function _processIndex(){
-      return true;
+        $this->Application->set($this->data);
+        return true;
     }
     function _processBiodata(){
         $this->Person->set($this->data);

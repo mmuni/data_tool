@@ -1,18 +1,14 @@
 <?php echo $this-> Form->create('Application', array('url' => $this->here)); ?>
 
 <div class="page-header">
-  <h2>Create Account</h2>
-   Create account to take full advantage of all the features.
+  <h2>New Application</h2>
+  <p>This code is unique to your application. Please save it for later, so you can resume your application at a later stage</p>
 </div>
 
-	<div class="row">
-		<div class="col-md-6">
-			<h2>New Applicant</h2>
-			<?php echo $this->Form->input('Person.firstname'); ?>
-			<?php echo $this->Form->input('Person.lastname'); ?>
-			<?php echo $this->Form->input('Person.phone_number'); ?>
-            <?php echo $this->Form->input('Person.email', array('label' => 'Email (optional)' )); ?>
-			<?php echo $this->Form->submit('Start', array('div' => false, 'class' => 'btn')); ?>
-		</div>
-	</div>
+<div class="row">
+    <div class="col-md-6">
+        <?php echo $this->Form->input('Appplication.code', array('value' => $code, 'disabled' => true, 'label' => 'Application specific code')); ?>
+        <?php echo $this->Form->submit('Start', array('div' => false, 'class' => 'btn btn-primary')); ?>
+    </div>
+</div>
 <?php echo $this->Form->end(); ?>

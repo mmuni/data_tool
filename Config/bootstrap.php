@@ -120,3 +120,4 @@ CakeLog::config('error', array(
 
 CakePlugin::load('ApplicationManager', array('bootstrap' => true, 'routes' => false));
 CakePlugin::load('Bs3Helpers', array('bootstrap' => true, 'routes' => false));
+CakePlugin::load('Migrations');

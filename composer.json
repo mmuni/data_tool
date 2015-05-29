@@ -5,7 +5,8 @@
         "cakephp/cakephp": "2.6.*",
         "ircmaxell/random-lib": "*",
         "phpunit/php-invoker": "~1.1",
-        "phpunit/phpunit": "3.7.38"
+        "phpunit/phpunit": "3.7.38",
+        "cakedc/migrations": "2.3.6"
     },
     "license": "MIT",
     "authors": [

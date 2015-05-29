@@ -1,12 +1,12 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Address Model
+ * AddressPerson Model
  *
- * @property University $University
- * @property AddressPerson $AddressPerson
+ * @property Address $Address
+ * @property Person $Person
  */
-class Address extends AppModel {
+class AddressPerson extends AppModel {
 
 /**
  * Validation rules
@@ -14,9 +14,9 @@ class Address extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'district' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+		'address_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -24,9 +24,9 @@ class Address extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'city' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+		'person_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -34,7 +34,7 @@ class Address extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'country' => array(
+		'type' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
@@ -64,34 +64,19 @@ class Address extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'University' => array(
-			'className' => 'University',
-			'foreignKey' => 'university_id',
+		'Address' => array(
+			'className' => 'Address',
+			'foreignKey' => 'address_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Person' => array(
+			'className' => 'Person',
+			'foreignKey' => 'person_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		)
 	);
-
-/**
- * hasMany associations
- *
- * @var array
- */
-	public $hasMany = array(
-		'AddressPerson' => array(
-			'className' => 'AddressPerson',
-			'foreignKey' => 'address_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);
-
 }

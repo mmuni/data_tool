@@ -52,7 +52,7 @@ class ApplicationsController extends ApplicationManagerAppController {
     public $layout = 'application_wizard';
 
     public function beforeFilter(){
-	    $this->Auth->allow('wizard');
+        $this->Auth->allow('wizard', 'index', 'resume');
         $this->Wizard->steps = array(
             'index',
             'biodata',
@@ -68,17 +68,17 @@ class ApplicationsController extends ApplicationManagerAppController {
             'feedback',
             'review'
         );
-	$this->Wizard->roaming =true;
+
+        $this->Wizard->roaming =true;
         $this->set('countries', $this->Country->find('list'));
         $this->set('courses', $this->Course->find('list'));
         $this->set('course_programmes', $this->CourseProgramme->find('list'));
         $this->set('course_types', $this->CourseType->find('list'));
-
         $this->set('title_for_layout', 'Application Manager');
-		$this->set('subjects', $this->Subject->find('list'));
-		$this->set('disabilities', $this->Disability->find('list'));
-		$this->set('Agrades', $this->Grade->find('list', array('conditions' => array('Grade.level2' => "A"))));
-		$this->set('Ogrades', $this->Grade->find('list', array('conditions' => array('Grade.level1' => "O"))));
+        $this->set('subjects', $this->Subject->find('list'));
+        $this->set('disabilities', $this->Disability->find('list'));
+        $this->set('Agrades', $this->Grade->find('list', array('conditions' => array('Grade.level2' => "A"))));
+        $this->set('Ogrades', $this->Grade->find('list', array('conditions' => array('Grade.level1' => "O"))));
     }
 
     public function index() {

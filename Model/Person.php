@@ -3,53 +3,26 @@ App::uses('AppModel', 'Model');
 /**
  * Person Model
  *
- * @property Application $Application
- * @property StaffDetail $StaffDetail
  * @property AcademicHistory $AcademicHistory
- * @property AddressPerson $AddressPerson
+ * @property Application $Application
  * @property Career $Career
- * @property ContactDetail $ContactDetail
  * @property Document $Document
  * @property EnglishProficiency $EnglishProficiency
+ * @property StaffDetail $StaffDetail
+ * @property Disability $Disability
+ * @property Feedback $Feedback
  */
 class Person extends AppModel {
 
 /**
- * Display field
+ * Validation rules
  *
- * @var string
+ * @var array
  */
-
-	public $displayField = 'surname';
-
-	
-
-
-
- // Validation rules
- 
- //@var array
- 
 	public $validate = array(
 		'surname' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Your custom message here',
-				'allowEmpty' => false,
-				'required' => false,
-				'last' => false, // Stop validation after this rule
-				'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-			'maxLength' => array(
-				'rule' => array('maxLength'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-			'custom' => array(
-				'rule' => array('custom'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -60,22 +33,6 @@ class Person extends AppModel {
 		'othername' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-			'custom' => array(
-				'rule' => array('custom'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-			'maxLength' => array(
-				'rule' => array('maxLength'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -102,16 +59,60 @@ class Person extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-			'custom' => array(
-				'rule' => array('custom'),
+		),
+		'gender' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-			'maxLength' => array(
-				'rule' => array('maxLength'),
+		),
+		'title' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'phone_number' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'religion' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'place_of_birth' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'marital_status' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -134,33 +135,10 @@ class Person extends AppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
- * hasOne associations
- *
- * @var array
- */
-	public $hasOne = array(
-		'Application' => array(
-			'className' => 'Application',
-			'foreignKey' => 'person_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'StaffDetail' => array(
-			'className' => 'StaffDetail',
-			'foreignKey' => 'person_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
-
-/**
  * hasMany associations
  *
  * @var array
  */
- /*
 	public $hasMany = array(
 		'AcademicHistory' => array(
 			'className' => 'AcademicHistory',
@@ -175,8 +153,8 @@ class Person extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'AddressPerson' => array(
-			'className' => 'AddressPerson',
+		'Application' => array(
+			'className' => 'Application',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -190,19 +168,6 @@ class Person extends AppModel {
 		),
 		'Career' => array(
 			'className' => 'Career',
-			'foreignKey' => 'person_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'ContactDetail' => array(
-			'className' => 'ContactDetail',
 			'foreignKey' => 'person_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -239,7 +204,55 @@ class Person extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+		),
+		'StaffDetail' => array(
+			'className' => 'StaffDetail',
+			'foreignKey' => 'person_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
 		)
 	);
-*/
+
+
+/**
+ * hasAndBelongsToMany associations
+ *
+ * @var array
+ */
+	public $hasAndBelongsToMany = array(
+		'Disability' => array(
+			'className' => 'Disability',
+			'joinTable' => 'people_disabilities',
+			'foreignKey' => 'person_id',
+			'associationForeignKey' => 'disability_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+		),
+		'Feedback' => array(
+			'className' => 'Feedback',
+			'joinTable' => 'people_feedbacks',
+			'foreignKey' => 'person_id',
+			'associationForeignKey' => 'feedback_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+		)
+	);
+
 }

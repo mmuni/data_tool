@@ -1,8 +1,9 @@
 <div class="people form">
 <?php echo $this->Form->create('Person'); ?>
 	<fieldset>
-		<legend><?php echo __('Add Person'); ?></legend>
+		<legend><?php echo __('Edit Person'); ?></legend>
 	<?php
+		echo $this->Form->input('id');
 		echo $this->Form->input('surname');
 		echo $this->Form->input('othername');
 		echo $this->Form->input('date_of_birth');
@@ -24,6 +25,7 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
+		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Person.id')), array(), __('Are you sure you want to delete # %s?', $this->Form->value('Person.id'))); ?></li>
 		<li><?php echo $this->Html->link(__('List People'), array('action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link(__('List Academic Histories'), array('controller' => 'academic_histories', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Academic History'), array('controller' => 'academic_histories', 'action' => 'add')); ?> </li>

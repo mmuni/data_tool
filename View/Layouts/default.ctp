@@ -26,15 +26,15 @@ $cakeDescription = __d('cake_dev', 'MMU .::. ');
 		<?php echo $cakeDescription ?>
 		<?php echo $this->fetch('title'); ?>
 	</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
-	<script src="//code.highcharts.com/highcharts.js"></script>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<script src="/js/jquery-1.11.2.min.js"></script>
+	<script src="/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/highcharts.js"></script>
 	<?php
 		echo $this->Html->meta('icon');
 		echo $this->Html->css(array('mmu'));
-		echo $this->Html->script(array('holder', 'highcharts'));
+		echo $this->Html->script(array('holder', 'highcharts', 'app'));
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');

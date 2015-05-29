@@ -12,11 +12,11 @@
 		<ul class="list-group">
 			<li class="list-group-item">
 				<i class="glyphicon glyphicon-thumbs-up"></i>
-				I want to <?php echo $this->Html->link('Start My Application', '/applications'); ?>.
+				I want to <?php echo $this->Html->link('Start My Application', '/apply'); ?>.
 			</li>
 			<li class="list-group-item">
 				<i class="glyphicon glyphicon-edit"></i>
-				I want to <?php echo $this->Html->link('Resume My Application', '/applications/resume'); ?>.
+				I want to <?php echo $this->Html->link('Resume My Application', '/apply/resume'); ?>.
 			</li>
 			<li class="list-group-item">
 				<i class="glyphicon glyphicon-eye-open"></i>

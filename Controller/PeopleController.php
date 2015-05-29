@@ -7,7 +7,7 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  */
 class PeopleController extends AppController {
-    var $uses = array('Person');
+
 /**
  * Components
  *
@@ -15,10 +15,6 @@ class PeopleController extends AppController {
  */
 	public $components = array('Paginator');
 
-	public function beforeFilter (){
-		parent::beforeFilter();
-		$this->Auth->allow('add');
-	}
 /**
  * index method
  *
@@ -59,25 +55,9 @@ class PeopleController extends AppController {
 				$this->Session->setFlash(__('The person could not be saved. Please, try again.'));
 			}
 		}
-
-
-		
-
-		$universities = $this->University->find('list');
-
-		$this->set(compact('universities'));
-
-		//$universities = $this->Person->University->find('list');
-		//$this->set(compact('universities'));
-<<<<<<< HEAD
-=======
-		//$universities = $this->University->find('list');
-		//$this->set(compact('universities'));
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
-
->>>>>>> origin/master
+		$disabilities = $this->Person->Disability->find('list');
+		$feedback = $this->Person->Feedback->find('list');
+		$this->set(compact('disabilities', 'feedback'));
 	}
 
 /**
@@ -102,8 +82,9 @@ class PeopleController extends AppController {
 			$options = array('conditions' => array('Person.' . $this->Person->primaryKey => $id));
 			$this->request->data = $this->Person->find('first', $options);
 		}
-		$universities = $this->Person->University->find('list');
-		$this->set(compact('universities'));
+		$disabilities = $this->Person->Disability->find('list');
+		$feedback = $this->Person->Feedback->find('list');
+		$this->set(compact('disabilities', 'feedback'));
 	}
 
 /**
@@ -118,11 +99,12 @@ class PeopleController extends AppController {
 		if (!$this->Person->exists()) {
 			throw new NotFoundException(__('Invalid person'));
 		}
-		$this->request->onlyAllow('post', 'delete');
+		$this->request->allowMethod('post', 'delete');
 		if ($this->Person->delete()) {
 			$this->Session->setFlash(__('The person has been deleted.'));
 		} else {
 			$this->Session->setFlash(__('The person could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
-	}}
+	}
+}

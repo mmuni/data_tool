@@ -30,11 +30,8 @@
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
-	Router::connect('/applications', array(
-	    'plugin' => 'application_manager',
-	    'controller' => 'applications',
-	    'action' => 'wizard'
-	));
+    Router::connect('/apply/resume', array('plugin' => 'application_manager', 'controller' => 'applications', 'action' => 'resume'));
+    Router::connect('/apply', array('plugin' => 'application_manager', 'controller' => 'applications', 'action' => 'wizard'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

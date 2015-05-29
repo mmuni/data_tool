@@ -3,7 +3,9 @@
     "description": "Data collection tool for MMU",
     "require": {
         "cakephp/cakephp": "2.6.*",
-	"ircmaxell/random-lib": "*"
+        "ircmaxell/random-lib": "*",
+        "phpunit/php-invoker": "~1.1",
+        "phpunit/phpunit": "3.7.38"
     },
     "license": "MIT",
     "authors": [

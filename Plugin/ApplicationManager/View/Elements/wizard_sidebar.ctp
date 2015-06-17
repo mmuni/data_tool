@@ -5,6 +5,7 @@ $titles = array(
 	'biodata' => 'Biographical Details',
 	'address' => 'Applicant Address',
 	'courses' => 'Courses',
+	'uace' => 'UACE',
 );
 
 echo "<div class='list-group'>";

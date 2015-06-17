@@ -105,12 +105,12 @@ class ApplicationsController extends ApplicationManagerAppController {
         return true;
     }
     function _processBiodata(){
-        $this->Person->set($this->data);
-		$this->ContactDetail->set($this->data);
-       // if ($this->Person->validates() && $this->ContactDetail->validates()) {
-          //  return true;
-        //}
-       // return false;
+	    $this->Person->set($this->data);
+	    $this->ContactDetail->set($this->data);
+	    if ($this->Person->validates() && $this->ContactDetail->validates()) {
+		    return true;
+	    }
+	    return false;
     }
 
     function _prepareBiodata(){

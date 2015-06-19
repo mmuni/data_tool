@@ -13,22 +13,26 @@ for ($i = 0; $i < 3; $i = $i+1):
 
     echo $this->Form->input('ApplicationCourse.'.$i.'.course_id', array(
         'options' => $courses,
-        'label' => 'Name'
+        'label' => 'Name',
+        'empty' => '(choose one)'
     ));
 
     echo $this->Form->input('ApplicationCourse.'.$i.'.course_type_id', array(
         'options' => $course_types,
         'type' => 'radio',
-        'class' => 'radio-inline'
+        'class' => 'radio-inline',
+        'empty' => '(not applicable)'
     ));
 
     echo $this->Form->input('ApplicationCourse.'.$i.'.course_programme_id', array(
         'options' => $course_programmes,
         'type' => 'radio',
-        'class' => 'radio-inline'
+        'class' => 'radio-inline',
+        'empty' => '(not applicable)'
     ));
 
 endfor;
+?></fieldset><?php
 
 echo $this->element('wizard_buttons');
 
